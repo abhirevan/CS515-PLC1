@@ -31,6 +31,4 @@
 /usr/bin/ocamlopt -c -o main.cmx main.ml # cached
 # Target: main.native, tags: { dont_link_with, extension:native, file:main.native, link, native, ocaml, program, quiet }
 /usr/bin/ocamlopt assert.cmx hellocaml.cmx gradedtests.cmx providedtests.cmx main.cmx -o main.native # cached
-# Target: main.byte, tags: { byte, dont_link_with, extension:byte, file:main.byte, link, ocaml, program, quiet }
-/usr/bin/ocamlc assert.cmo hellocaml.cmo gradedtests.cmo providedtests.cmo main.cmo -o main.byte # cached
 # Compilation successful.

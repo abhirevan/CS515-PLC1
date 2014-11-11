@@ -1,0 +1,122 @@
+I use the toplevel like this:
+
+> ocaml -I _build
+
+(this tells ocaml where to find the *.cmo files. It is populated by ocamlbuild)
+
+# #load "x86simplified.cmo"
+
+(this binds the module X86simplified to a specific implementation)
+
+
+#use "x86interpreter.ml"
+
+(this reads all the definitions from x86interpreter.ml, as though you had typed them by hand)
+
+---------
+    
+    expected expected OF:false SF:true ZF:false
+
+    
+    Neg:
+    
+run [(mk_block "main"  [
+      Mov (Imm 2l, eax);
+      Mov (Imm 3l, ebx);
+      Mov (Imm 255l, ecx);
+      Mov (Imm 1l , stack_offset 0l);
+      And (eax, eax);
+      And (Imm 2l, eax);
+      And (eax, ebx);
+      And (stack_offset 0l, ecx);
+      Ret;
+    ])] 
+
+
+run [(mk_block "main" [
+      Mov ( Imm 1l, eax);
+      Neg (eax);
+      Ret;
+    ])];;
+      
+      expected expected OF:false SF:true ZF:false
+      
+      
+run   [(mk_block "main"  [
+      Mov (Imm 2l, eax);
+      Mov (Imm 3l, ebx);
+      Mov (Imm 255l, ecx);
+      Mov (Imm 1l , stack_offset 0l);
+      And (eax, eax);
+      And (Imm 2l, eax);
+      And (eax, ebx);
+      And (stack_offset 0l, ecx);
+      Ret;
+    ])] ;;
+    
+    shl
+    
+    run [(mk_block "main"  [
+      Mov (Imm 1l, eax);
+      Mov (Imm 2l, stack_offset 0l);
+      Mov (Imm 3l, ecx);
+      Shl (Imm 2l, eax);
+      Shl (ecx, stack_offset 0l);
+      Ret;
+    ])] ;;
+      
+      
+      run [(mk_block "main" [
+      Setb (NotZero, eax);
+			    Ret;
+    ])];;
+    
+    Jmp 
+    
+    run [(mk_block "main" [
+      Jmp (Lbl (mk_lbl_named "out"));
+      Ret
+    ]); (mk_block "out" [
+      Ret
+    ])];;
+    
+    run  [(mk_insn_block (mk_lbl_named "gcd") [
+      Push (ebp);
+      Mov (esp, ebp);
+      Mov ((stack_offset 12l), eax);
+      Mov ((stack_offset 8l), ebx);
+      Jmp (Lbl (mk_lbl_named "gcd_recurse"));
+      Ret
+    ]); 
+ (mk_insn_block (mk_lbl_named "gcd_recurse") [
+      Cmp ((Imm 0l),ebx);
+      J (NotEq, (mk_lbl_named "gcd_re1"));
+      Pop ebp;
+      Ret;
+    ]); 
+ (mk_insn_block (mk_lbl_named "gcd_re1") [
+      Cmp (eax, ebx);
+      J (Sgt, (mk_lbl_named "gcd_gt"));
+      J (Slt, (mk_lbl_named "gcd_lt"));
+      Ret
+    ]); 
+     (mk_insn_block (mk_lbl_named "gcd_gt") [
+      Sub (eax, ebx);
+      Call (Lbl (mk_lbl_named "gcd_recurse"));
+      Ret
+    ]);
+ (mk_insn_block (mk_lbl_named "gcd_lt") [
+      Sub (ebx, eax);
+      Call (Lbl (mk_lbl_named "gcd_recurse"));
+      Ret
+    ]); 
+
+     (mk_insn_block (mk_lbl_named "main") [
+      Push (Imm 10l);
+      Push (Imm 20l);
+      Call (Lbl (mk_lbl_named "gcd"));
+      Add ((Imm 8l), esp);
+      Ret;
+	   ])
+];;
+      

@@ -1,0 +1,199 @@
+I use the toplevel like this:
+
+> ocaml -I _build
+
+(this tells ocaml where to find the *.cmo files. It is populated by ocamlbuild)
+
+#load "x86simplified.cmo"
+
+(this binds the module X86simplified to a specific implementation)
+
+
+#use "x86interpreter.ml"
+
+(this reads all the definitions from x86interpreter.ml, as though you had typed them by hand)
+
+---------
+    
+    expected expected OF:false SF:true ZF:false
+
+    
+    Neg:
+    
+run [(mk_block "main"  [
+      Mov (Imm 2l, eax);
+      Mov (Imm 3l, ebx);
+      Mov (Imm 255l, ecx);
+      Mov (Imm 1l , stack_offset 0l);
+      And (eax, eax);
+      And (Imm 2l, eax);
+      And (eax, ebx);
+      And (stack_offset 0l, ecx);
+      Ret;
+    ])] 
+
+
+run [(mk_block "main" [
+      Mov ( Imm 1l, eax);
+      Neg (eax);
+      Ret;
+    ])];;
+      
+      expected expected OF:false SF:true ZF:false
+      
+      
+run   [(mk_block "main"  [
+      Mov (Imm 2l, eax);
+      Mov (Imm 3l, ebx);
+      Mov (Imm 255l, ecx);
+      Mov (Imm 1l , stack_offset 0l);
+      And (eax, eax);
+      And (Imm 2l, eax);
+      And (eax, ebx);
+      And (stack_offset 0l, ecx);
+      Ret;
+    ])] ;;
+    
+    shl
+    
+    run [(mk_block "main"  [
+      Mov (Imm 1l, eax);
+      Mov (Imm 2l, stack_offset 0l);
+      Mov (Imm 3l, ecx);
+      Shl (Imm 2l, eax);
+      Shl (ecx, stack_offset 0l);
+      Ret;
+    ])] ;;
+      
+      
+      run [(mk_block "main" [
+      Setb (NotZero, eax);
+			    Ret;
+    ])];;
+    
+    Jmp 
+    
+    run [(mk_block "main" [
+      Jmp (Lbl (mk_lbl_named "out"));
+      Ret
+    ]); (mk_block "out" [
+      Ret
+    ])];;
+    
+    run  [(mk_insn_block (mk_lbl_named "gcd") [
+      Push (ebp);
+      Mov (esp, ebp);
+      Mov ((stack_offset 12l), eax);
+      Mov ((stack_offset 8l), ebx);
+      Jmp (Lbl (mk_lbl_named "gcd_recurse"));
+      Ret
+    ]); 
+ (mk_insn_block (mk_lbl_named "gcd_recurse") [
+      Cmp ((Imm 0l),ebx);
+      J (NotEq, (mk_lbl_named "gcd_re1"));
+      Pop ebp;
+      Ret;
+    ]); 
+ (mk_insn_block (mk_lbl_named "gcd_re1") [
+      Cmp (eax, ebx);
+      J (Sgt, (mk_lbl_named "gcd_gt"));
+      J (Slt, (mk_lbl_named "gcd_lt"));
+      Ret
+    ]); 
+     (mk_insn_block (mk_lbl_named "gcd_gt") [
+      Sub (eax, ebx);
+      Call (Lbl (mk_lbl_named "gcd_recurse"));
+      Ret
+    ]);
+ (mk_insn_block (mk_lbl_named "gcd_lt") [
+      Sub (ebx, eax);
+      Call (Lbl (mk_lbl_named "gcd_recurse"));
+      Ret
+    ]); 
+
+     (mk_insn_block (mk_lbl_named "main") [
+      Push (Imm 10l);
+      Push (Imm 20l);
+      Call (Lbl (mk_lbl_named "gcd"));
+      Add ((Imm 8l), esp);
+      Ret;
+	   ])
+];;
+
+
+run [(mk_block "main" [
+      Jmp (Lbl (mk_lbl_named "good"));
+      Add (Imm 10l, eax);
+      Ret;
+      ]);
+    (mk_block "good" [
+      Add (Imm 3l, eax);
+      Ret;
+      Add (Imm 100l, eax);
+      Ret;
+      ])
+    ]
+
+run [(mk_block "main" [
+      Mov (Imm 0x70000000l, eax);
+      Shl (Imm 1l, eax);
+      Ret;
+    ])]
+
+
+
+(**
+let  process_insn_block (code:insn list) (xs:x86_state) =
+let rec aux acc=function
+|[]->raise (X86_segmentation_fault "Invalid operand block")
+|[insn]->exec_insn insn xs
+|h::t->aux acc t
+in aux [] code
+
+let retlabel (op:operand):lbl=
+ match op with
+Lbl l1->l1
+|_->raise (X86_segmentation_fault "No Label")
+
+let interpret (code:insn_block list) (xs:x86_state) (l:lbl) : unit =
+let search (lab:lbl):insn list=
+(List.find (fun x-> x.label=lab) code).insns
+in 
+let rec control_st (ins_list:insn list) (stock) =
+match ins_list with
+[]->()
+|head::tail-> begin match head with
+|Ret -> xs.s_regs.(iesp)<- Int32.add xs.s_regs.(iesp) 4l;
+if stock<>[] then control_st (List.hd stock) (List.tl stock)
+|Call src->exec_insn (Push (Imm 0l)) xs;
+control_st (search (retlabel src)) (tail::stock)
+|Jmp src->control_st (search (retlabel src)) stock
+|J (cc, label)->if condition_matches xs cc then
+ control_st (search label) stock else 
+control_st tail stock
+|_-> exec_insn head xs;
+control_st tail stock
+end in control_st (search l) []
+**)
+
+(**
+let interpret (code:insn_block list) (xs:x86_state) (l:lbl) : unit =
+	let parse_block la = (List.find (fun i -> i.label = la) code).insns in
+		let rec insn_loop code_list stk =
+			if code_list <> [] then
+				let h, t = List.hd code_list, List.tl code_list in
+					begin match h with
+						| Ret      -> xs.s_regs.(iesp) <- xs.s_regs.(iesp) +@ 4l;
+							      if stk <> [] then insn_loop (List.hd stk) (List.tl stk)
+						| Jmp o    -> insn_loop (parse_block (chk_lbl o)) stk
+						| Call o   -> exec_insn (Push (Imm 0l)) xs;
+							      insn_loop (parse_block (chk_lbl o)) (t::stk)
+						| J (c, l) -> 
+						  insn_loop (if condition_matches xs c then parse_block l else t) stk
+						| _ -> exec_insn h xs; insn_loop t stk
+					end in
+					insn_loop (parse_block l) []
+**)
+
+
+      

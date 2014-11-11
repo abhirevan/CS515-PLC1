@@ -1,0 +1,42 @@
+Identification:
+  
+160002882;as2249;Abhijit Shanbhag;as2249@scarletmail.rutgers.edu
+
+
+Known issues with your implementation:
+
+
+
+------------------------
+Course Project Feedback:
+------------------------
+
+1.  How much time did it take to complete this project?
+It took me roughly 18-20 hours
+
+
+2. How effective was this project? [0-10]: 9
+
+    0 = learned nothing
+   10 = highly educational
+
+9
+
+3. How engaging was this project? [0-10]:9
+
+    0 = tedious and boring
+   10 = fun and engaging
+9
+
+4. How difficult was this project? [0-10]:7
+
+    0 = piece of cake
+   10 = extremely hard
+
+   (note that hard is not necessarily bad, 
+    if it's "hard" as in "challenging")
+
+[Feel free to add comments about this project]
+
+I felt the x86 simplified specification should have been more detailed. However all my questions were answered at the forum so it was not a problem. Need more guidance on debugging ocaml code. 
+
