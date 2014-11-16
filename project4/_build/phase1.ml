@@ -48,7 +48,7 @@ let compile_unop (u : Ast.unop) (i_uid: Ll.uid) (exp_uid : Ll.uid) : Ll.insn =
 let rec compile_exp (ip_exp: Ast.exp) (curr_ctxt:Ctxt.t) : (Ll.insn list*Ll.uid) =
 	begin match ip_exp with
 	| Cint i -> let new_uid = Ll.gen_sym () in
-				let const_insn = [Load (new_uid, Ll.Const i)] in
+				let const_insn = [Ll.Binop (new_uid,Ll.Add,Ll.Const 0l, Ll.Const i)] in
 				(const_insn,new_uid)
 	| Id s -> 	begin match Ctxt.lookup s curr_ctxt with
 				| c_uid -> let new_uid = Ll.gen_sym () in 
@@ -76,20 +76,23 @@ let complile_stmt_assign (l_sym_str: string) (ass_exp: Ast.exp) (ip_ctxt : Ctxt.
 
 
 
-let rec compile_stmt (curr_stmt: Ast.stmt) (ip_ctxt : Ctxt.t) (entry_lbl: Ll.lbl):  Ll.bblock list*Ll.lbl  = 
-	let ret_lbl = X86simplified.mk_lbl () in 
+let rec compile_stmt (curr_stmt: Ast.stmt) (ip_ctxt : Ctxt.t) (entry_lbl: Ll.lbl):  Ll.bblock list*Ll.lbl  =  
 	begin match curr_stmt with
-		| Assign (l_sym,ass_exp) -> let stmt_insns= begin match l_sym with 
+		| Assign (l_sym,ass_exp) -> let ret_lbl = X86simplified.mk_lbl () in
+									let stmt_insns= begin match l_sym with 
 													| Ast.Var l_sym_str -> complile_stmt_assign l_sym_str ass_exp ip_ctxt 
 													end in
 									let ret_bblock = [{label= entry_lbl; insns= stmt_insns ;terminator= Ll.Br(ret_lbl);}] in
 										(ret_bblock,ret_lbl)
-		| If (cond_exp,then_stmt,else_stmt1) -> 	let c_exp_insns, c_uid = compile_exp cond_exp ip_ctxt in
+		| If (cond_exp,then_stmt,else_stmt1) -> 	let ret_lbl = X86simplified.mk_lbl () in
+													let c_exp_insns, c_uid = compile_exp cond_exp ip_ctxt in
 													let then_lbl = X86simplified.mk_lbl ()  in
 													let then_bblocks,then_ret_lbl = compile_stmt then_stmt ip_ctxt then_lbl in
 														begin match else_stmt1 with
-																| None -> 	let ret_bblock = [{label= entry_lbl; insns= c_exp_insns ;terminator= Ll.Br(then_lbl);}] @ then_bblocks in
-																			(ret_bblock,then_ret_lbl) 
+																| None -> 	let cond_bblock = [{label= entry_lbl; insns= c_exp_insns;terminator= Ll.Cbr (Ll.Local (c_uid), then_lbl, ret_lbl);}] in
+																			let dummy_then_ret_bblock = [{label= then_ret_lbl; insns= [];terminator= Ll.Br(ret_lbl);}] in
+																			let ret_bblock = cond_bblock @ then_bblocks @ dummy_then_ret_bblock in
+																			(ret_bblock,ret_lbl) 
 		
 																| Some else_stmt ->	let else_lbl = X86simplified.mk_lbl ()  in
 																						let else_bblocks,else_ret_lbl = compile_stmt else_stmt ip_ctxt else_lbl in
@@ -100,7 +103,8 @@ let rec compile_stmt (curr_stmt: Ast.stmt) (ip_ctxt : Ctxt.t) (entry_lbl: Ll.lbl
 																							let ret_bblock = temp_bblock @ dummy_then_ret_bblock @ dummy_else_ret_bblock in 
 																								(ret_bblock,ret_lbl)
 														end
-		| While (cond_exp,loop_stmt) -> let c_exp_insns, c_uid = compile_exp cond_exp ip_ctxt in
+		| While (cond_exp,loop_stmt) -> 
+										let c_exp_insns, c_uid = compile_exp cond_exp ip_ctxt in
 										let loop_true_lbl = X86simplified.mk_lbl () in
 										let ret_lbl = X86simplified.mk_lbl () in
 										let cond_bblock = 
@@ -113,11 +117,39 @@ let rec compile_stmt (curr_stmt: Ast.stmt) (ip_ctxt : Ctxt.t) (entry_lbl: Ll.lbl
 		| For (vdecls,cond_exp1,for_stmt1,loop_stmt) -> 
 			let vdecl_bblock,new_ctxt,vdecl_ret_lbl = compile_vdecl_lst vdecls ip_ctxt entry_lbl in
 			let ret_lbl = X86simplified.mk_lbl () in
+			let cond_exp_bblock, cond_exp_ret_lbl = 
+				begin match cond_exp1 with
+					| None -> 	let dummy_cond_exp_ret_lbl = X86simplified.mk_lbl () in 
+								let dummy_cond_exp_bblock = [{label= vdecl_ret_lbl; insns= [] ;terminator= Ll.Br(dummy_cond_exp_ret_lbl);}] in
+																				(dummy_cond_exp_bblock,dummy_cond_exp_ret_lbl)
+					| Some cond_exp -> 	let c_exp_ret_lbl =  X86simplified.mk_lbl () in
+										let c_exp_insns, c_uid = compile_exp cond_exp new_ctxt in
+										let cond_bblock = [{label= vdecl_ret_lbl; insns= c_exp_insns ;terminator= Ll.Cbr (Ll.Local (c_uid), c_exp_ret_lbl, ret_lbl) }] in
+											(cond_bblock,c_exp_ret_lbl)							
+				end in
+			let loop_stmt_bblocks,loop_stmt_ret_lbl = compile_stmt loop_stmt new_ctxt cond_exp_ret_lbl in 
+			let for_stmt_bblock, for_stmt_ret_lbl = 
+				begin match for_stmt1 with
+					| None -> 	let dummy_for_stmt_ret_lbl = X86simplified.mk_lbl () in 
+								let dummy_for_stmt_bblock = [{label= loop_stmt_ret_lbl; insns= [] ;terminator= Ll.Br(dummy_for_stmt_ret_lbl);}] in
+																				(dummy_for_stmt_bblock,dummy_for_stmt_ret_lbl)
+					| Some for_stmt ->	let for_stmt_bblocks,for_stmt_bblocks_ret_lbl = compile_stmt for_stmt new_ctxt loop_stmt_ret_lbl in
+											(for_stmt_bblocks,for_stmt_bblocks_ret_lbl)
+				end in
+			let dummy_loop_bblock =  [{label= for_stmt_ret_lbl; insns= [] ;terminator= Ll.Br(vdecl_ret_lbl);}] in
+			let ret_bblocks = [vdecl_bblock] @ cond_exp_bblock @ loop_stmt_bblocks @ for_stmt_bblock @ dummy_loop_bblock in 
+				(ret_bblocks,ret_lbl)	
+
+			(*
 			let for_etc_bblocks,for_etc_ret_lbl = 	begin match cond_exp1,for_stmt1 with
 																| None,None -> 	let for_etc_bblock_ret_lbl =  X86simplified.mk_lbl () in
 																				let for_etc_bblock = 
 																					[{label= vdecl_ret_lbl; insns= [] ;terminator= Ll.Br(for_etc_bblock_ret_lbl);}] in
 																				(for_etc_bblock,for_etc_bblock_ret_lbl)
+																				
+																				
+																				
+	
 																| Some cond_exp,None -> 
 																	let c_exp_ret_lbl =  X86simplified.mk_lbl () in
 																	let c_exp_insns, c_uid = compile_exp cond_exp new_ctxt in
@@ -140,9 +172,11 @@ let rec compile_stmt (curr_stmt: Ast.stmt) (ip_ctxt : Ctxt.t) (entry_lbl: Ll.lbl
 													end in
 			let loop_stmt_bblocks,loop_stmt_ret_lbl = compile_stmt loop_stmt new_ctxt for_etc_ret_lbl in
 			let loop_dummy_bblock = [{label= loop_stmt_ret_lbl; insns= [] ;terminator= Ll.Br(vdecl_ret_lbl);}] in
-			let ret_bblocks = [vdecl_bblock] @ for_etc_bblocks @ loop_stmt_bblocks @ loop_dummy_bblock in (*fata*)
+			let ret_bblocks = [vdecl_bblock] @ for_etc_bblocks @ loop_stmt_bblocks @ loop_dummy_bblock in 
 				(ret_bblocks,ret_lbl)	
 				
+				
+		 *)
 		| Block b -> let bblocks, new_ctxt, blk_ret_lbl=  compile_block b ip_ctxt entry_lbl in
 						(bblocks, blk_ret_lbl)
 															
@@ -156,22 +190,22 @@ and compile_stmt_lst (stmt_lst: Ast.stmt list) (ip_ctxt : Ctxt.t)  (entry_lbl: L
 				(stmt_bblock_lst,ret_bblock_lst_lbl) 
 				
 				
-and left_rec_vdecl_lst (alloca_insns,exp_insns,store_insns,old_ctxt : Ll.insn list*Ll.insn list*Ll.insn list*Ctxt.t) (vardecl : Ast.var_decl) :
-(Ll.insn list*Ll.insn list*Ll.insn list*Ctxt.t) =
+and left_rec_vdecl_lst (alloca_insns,exp_insns,old_ctxt : Ll.insn list*Ll.insn list*Ctxt.t) (vardecl : Ast.var_decl) :
+(Ll.insn list*Ll.insn list*Ctxt.t) =
 	let var_id = vardecl.v_id in
 	let int_exp = vardecl.v_init in
 			let new_ctxt,new_uid = Ctxt.alloc var_id old_ctxt in
 			let alloca_insns_blk = alloca_insns @ [Ll.Alloca(new_uid)] in
 				let exp_insn_lst, exp_uid = compile_exp int_exp old_ctxt in
-				let exp_insns_blk = exp_insns @ exp_insn_lst in
-					let store_insns_blk = store_insns @ [Ll.Store(Ll.Local(exp_uid), Ll.Local(new_uid))] in
-						(alloca_insns_blk,exp_insns_blk,store_insns_blk,new_ctxt)
+				(*let exp_insns_blk = exp_insns @ exp_insn_lst in *)
+					let exp_insns_blk = exp_insns @ exp_insn_lst @ [Ll.Store(Ll.Local(exp_uid), Ll.Local(new_uid))] in
+						(alloca_insns_blk,exp_insns_blk,new_ctxt)
 			
 			
 and compile_vdecl_lst (var_decl_lst : Ast.var_decl list) (ip_ctxt : Ctxt.t) (entry_lbl: Ll.lbl) : Ll.bblock*Ctxt.t*Ll.lbl = 
-	let alloca_insns_blk,exp_insns_blk,store_insns_blk,new_ctxt = 
-		List.fold_left left_rec_vdecl_lst ([],[],[],ip_ctxt) var_decl_lst in 
-			let vdecl_isns = alloca_insns_blk@exp_insns_blk@store_insns_blk in
+	let alloca_insns_blk,exp_insns_blk,new_ctxt = 
+		List.fold_left left_rec_vdecl_lst ([],[],ip_ctxt) var_decl_lst in 
+			let vdecl_isns = alloca_insns_blk@exp_insns_blk in
 				let ret_lbl = X86simplified.mk_lbl () in
 					let ret_bblock = {label= entry_lbl; insns=vdecl_isns ;terminator= Ll.Br(ret_lbl);} in (ret_bblock,new_ctxt,ret_lbl)
 

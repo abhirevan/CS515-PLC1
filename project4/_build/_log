@@ -117,26 +117,26 @@
 /usr/bin/ocamldep -modules phase1.ml > phase1.ml.depends
 # Target: phase2.ml.depends, tags: { extension:ml, file:phase2.ml, ocaml, ocamldep, quiet }
 /usr/bin/ocamldep -modules phase2.ml > phase2.ml.depends # cached
+# Target: phase2.cmx, tags: { compile, extension:cmx, extension:ml, file:phase2.cmx, file:phase2.ml, implem, native, ocaml, quiet }
+/usr/bin/ocamlopt -c -o phase2.cmx phase2.ml # cached
 # Target: platform.ml.depends, tags: { extension:ml, file:platform.ml, ocaml, ocamldep, quiet }
 /usr/bin/ocamldep -modules platform.ml > platform.ml.depends # cached
 # Target: platform.cmx, tags: { compile, extension:cmx, extension:ml, file:platform.cmx, file:platform.ml, implem, native, ocaml, quiet }
 /usr/bin/ocamlopt -c -o platform.cmx platform.ml # cached
-# Target: phase2.cmx, tags: { compile, extension:cmx, extension:ml, file:phase2.cmx, file:phase2.ml, implem, native, ocaml, quiet }
-/usr/bin/ocamlopt -c -o phase2.cmx phase2.ml # cached
 # Target: phase1.cmx, tags: { compile, extension:cmx, extension:ml, file:phase1.cmx, file:phase1.ml, implem, native, ocaml, quiet }
 /usr/bin/ocamlopt -c -o phase1.cmx phase1.ml
 # Target: occ.cmx, tags: { compile, extension:cmx, extension:ml, file:occ.cmx, file:occ.ml, implem, native, ocaml, quiet }
-/usr/bin/ocamlopt -c -o occ.cmx occ.ml # cached
-# Target: gradedtests.cmx, tags: { compile, extension:cmx, extension:ml, file:gradedtests.cmx, file:gradedtests.ml, implem, native, ocaml, quiet }
-/usr/bin/ocamlopt -c -o gradedtests.cmx gradedtests.ml # cached
+/usr/bin/ocamlopt -c -o occ.cmx occ.ml
 # Target: Oconfig.ml.depends, tags: { extension:ml, file:Oconfig.ml, ocaml, ocamldep, quiet }
 /usr/bin/ocamldep -modules Oconfig.ml > Oconfig.ml.depends # cached
 # Target: Oconfig.cmx, tags: { compile, extension:cmx, extension:ml, file:Oconfig.cmx, file:Oconfig.ml, implem, native, ocaml, quiet }
 /usr/bin/ocamlopt -c -o Oconfig.cmx Oconfig.ml # cached
 # Target: providedtests.cmx, tags: { compile, extension:cmx, extension:ml, file:providedtests.cmx, file:providedtests.ml, implem, native, ocaml, quiet }
 /usr/bin/ocamlopt -c -o providedtests.cmx providedtests.ml # cached
+# Target: gradedtests.cmx, tags: { compile, extension:cmx, extension:ml, file:gradedtests.cmx, file:gradedtests.ml, implem, native, ocaml, quiet }
+/usr/bin/ocamlopt -c -o gradedtests.cmx gradedtests.ml
 # Target: main.cmx, tags: { compile, extension:cmx, extension:ml, file:main.cmx, file:main.ml, implem, native, ocaml, quiet }
-/usr/bin/ocamlopt -c -o main.cmx main.ml # cached
+/usr/bin/ocamlopt -c -o main.cmx main.ml
 # Target: main.native, tags: { dont_link_with, extension:native, file:main.native, link, native, ocaml, program, quiet }
-/usr/bin/ocamlopt str.cmxa unix.cmxa LibUtil.cmx Oconfig.cmx assert.cmx ast.cmx x86simplified.cmx ll.cmx ctxt.cmx cunit.cmx range.cmx parser.cmx lexer.cmx phase1.cmx platform.cmx phase2.cmx occ.cmx gradedtests.cmx providedtests.cmx main.cmx -o main.native
+/usr/bin/ocamlopt str.cmxa unix.cmxa LibUtil.cmx Oconfig.cmx assert.cmx ast.cmx x86simplified.cmx ll.cmx ctxt.cmx cunit.cmx range.cmx parser.cmx lexer.cmx phase1.cmx phase2.cmx platform.cmx occ.cmx gradedtests.cmx providedtests.cmx main.cmx -o main.native
 # Compilation successful.

@@ -13,12 +13,10 @@ failwith "dump not implemented"
 let empty : t = [] 
 
 (* try to reuse freed, otherwise create new *)
-let alloc (sym : string) (c : t) : (t * Ll.uid) = 
-	try
-		let old_uid = List.assoc sym c in (c,old_uid)
-	with Not_found -> let new_uid = Ll.gen_sym () in 
-						let new_ctxt = (sym,new_uid) :: c in
-							(new_ctxt,new_uid)
+let alloc (sym : string) (c : t) : (t * Ll.uid) =
+	let new_uid = Ll.mk_uid (sym) in
+	let new_t = (sym, new_uid) :: c in
+	(new_t, new_uid)
  
 
 
