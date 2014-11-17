@@ -1,0 +1,192 @@
+	.align 4
+	.text
+.globl program
+program:
+	pushl %ebp
+	movl %esp,%ebp
+	subl $800,%esp
+	jmp __689
+__689:
+	movl $0,%ecx
+	movl $0,%eax
+	addl %ecx,%eax
+	movl %eax,-12(%ebp)
+	movl -12(%ebp),%ecx
+	movl %ecx,-4(%ebp)
+	movl $0,%ecx
+	movl $0,%eax
+	addl %ecx,%eax
+	movl %eax,-16(%ebp)
+	movl -16(%ebp),%ecx
+	movl %ecx,-8(%ebp)
+	jmp __690
+__690:
+	movl -4(%ebp),%ecx
+	movl %ecx,-24(%ebp)
+	movl -24(%ebp),%ecx
+	movl %ecx,-20(%ebp)
+	jmp __691
+__691:
+	movl $9,%ecx
+	movl $0,%eax
+	addl %ecx,%eax
+	movl %eax,-32(%ebp)
+	movl -32(%ebp),%ecx
+	movl %ecx,-28(%ebp)
+	jmp __692
+__692:
+	movl -8(%ebp),%ecx
+	movl %ecx,-36(%ebp)
+	movl -28(%ebp),%ecx
+	movl %ecx,-40(%ebp)
+	movl -40(%ebp),%ecx
+	movl -36(%ebp),%eax
+	addl %ecx,%eax
+	movl %eax,-44(%ebp)
+	movl -44(%ebp),%ecx
+	movl %ecx,-8(%ebp)
+	jmp __693
+__693:
+	movl -8(%ebp),%ecx
+	movl %ecx,-48(%ebp)
+	movl -4(%ebp),%ecx
+	movl %ecx,-52(%ebp)
+	movl -52(%ebp),%ecx
+	movl -48(%ebp),%eax
+	addl %ecx,%eax
+	movl %eax,-56(%ebp)
+	movl -56(%ebp),%ecx
+	movl %ecx,-8(%ebp)
+	jmp __694
+__694:
+	movl -8(%ebp),%ecx
+	movl %ecx,-68(%ebp)
+	movl -68(%ebp),%ecx
+	movl %ecx,-60(%ebp)
+	movl $100,%ecx
+	movl $0,%eax
+	addl %ecx,%eax
+	movl %eax,-72(%ebp)
+	movl -72(%ebp),%ecx
+	movl %ecx,-64(%ebp)
+	jmp __695
+__695:
+	movl -8(%ebp),%ecx
+	movl %ecx,-76(%ebp)
+	movl -64(%ebp),%ecx
+	movl %ecx,-80(%ebp)
+	movl -80(%ebp),%ecx
+	movl -76(%ebp),%eax
+	addl %ecx,%eax
+	movl %eax,-84(%ebp)
+	movl -84(%ebp),%ecx
+	movl %ecx,-8(%ebp)
+	jmp __696
+__696:
+	movl -60(%ebp),%ecx
+	movl %ecx,-96(%ebp)
+	movl -96(%ebp),%ecx
+	movl %ecx,-88(%ebp)
+	movl $100,%ecx
+	movl $0,%eax
+	addl %ecx,%eax
+	movl %eax,-100(%ebp)
+	movl -100(%ebp),%ecx
+	movl %ecx,-92(%ebp)
+	jmp __697
+__697:
+	movl -92(%ebp),%ecx
+	movl %ecx,-104(%ebp)
+	movl -60(%ebp),%ecx
+	movl %ecx,-108(%ebp)
+	movl -108(%ebp),%ecx
+	movl -104(%ebp),%eax
+	addl %ecx,%eax
+	movl %eax,-112(%ebp)
+	movl -112(%ebp),%ecx
+	movl %ecx,-88(%ebp)
+	jmp __698
+__698:
+	movl -8(%ebp),%ecx
+	movl %ecx,-116(%ebp)
+	movl -60(%ebp),%ecx
+	movl %ecx,-120(%ebp)
+	movl -120(%ebp),%ecx
+	movl -116(%ebp),%eax
+	addl %ecx,%eax
+	movl %eax,-124(%ebp)
+	movl -124(%ebp),%ecx
+	movl %ecx,-8(%ebp)
+	jmp __699
+__699:
+	movl -8(%ebp),%ecx
+	movl %ecx,-128(%ebp)
+	movl -20(%ebp),%ecx
+	movl %ecx,-132(%ebp)
+	movl -132(%ebp),%ecx
+	movl -128(%ebp),%eax
+	addl %ecx,%eax
+	movl %eax,-136(%ebp)
+	movl -4(%ebp),%ecx
+	movl %ecx,-140(%ebp)
+	movl -140(%ebp),%ecx
+	movl -136(%ebp),%eax
+	addl %ecx,%eax
+	movl %eax,-144(%ebp)
+	movl -144(%ebp),%ecx
+	movl %ecx,-8(%ebp)
+	jmp __700
+__700:
+	movl -8(%ebp),%ecx
+	movl %ecx,-152(%ebp)
+	movl $94,%ecx
+	movl $0,%eax
+	addl %ecx,%eax
+	movl %eax,-156(%ebp)
+	movl -156(%ebp),%ecx
+	movl -152(%ebp),%eax
+	addl %ecx,%eax
+	movl %eax,-160(%ebp)
+	movl -160(%ebp),%ecx
+	movl %ecx,-148(%ebp)
+	jmp __701
+__701:
+	movl -148(%ebp),%ecx
+	movl %ecx,-164(%ebp)
+	movl $94,%ecx
+	movl $0,%eax
+	addl %ecx,%eax
+	movl %eax,-168(%ebp)
+	movl -168(%ebp),%ecx
+	movl -164(%ebp),%eax
+	addl %ecx,%eax
+	movl %eax,-172(%ebp)
+	movl -172(%ebp),%ecx
+	movl %ecx,-8(%ebp)
+	jmp __702
+__702:
+	movl -4(%ebp),%ecx
+	movl %ecx,-176(%ebp)
+	movl -8(%ebp),%ecx
+	movl %ecx,-180(%ebp)
+	movl -180(%ebp),%ecx
+	movl -176(%ebp),%eax
+	addl %ecx,%eax
+	movl %eax,-184(%ebp)
+	movl -20(%ebp),%ecx
+	movl %ecx,-188(%ebp)
+	movl -188(%ebp),%ecx
+	movl -184(%ebp),%eax
+	addl %ecx,%eax
+	movl %eax,-192(%ebp)
+	movl -192(%ebp),%ecx
+	movl %ecx,-8(%ebp)
+	jmp __703
+__703:
+	movl -8(%ebp),%ecx
+	movl %ecx,-196(%ebp)
+	movl -196(%ebp),%eax
+	addl $800,%esp
+	movl %esp,%ebp
+	popl %ebp
+	ret

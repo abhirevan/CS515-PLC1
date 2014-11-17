@@ -146,10 +146,6 @@ let rec compile_stmt (curr_stmt: Ast.stmt) (ip_ctxt : Ctxt.t) (entry_lbl: Ll.lbl
 																				let for_etc_bblock = 
 																					[{label= vdecl_ret_lbl; insns= [] ;terminator= Ll.Br(for_etc_bblock_ret_lbl);}] in
 																				(for_etc_bblock,for_etc_bblock_ret_lbl)
-																				
-																				
-																				
-	
 																| Some cond_exp,None -> 
 																	let c_exp_ret_lbl =  X86simplified.mk_lbl () in
 																	let c_exp_insns, c_uid = compile_exp cond_exp new_ctxt in
@@ -174,8 +170,7 @@ let rec compile_stmt (curr_stmt: Ast.stmt) (ip_ctxt : Ctxt.t) (entry_lbl: Ll.lbl
 			let loop_dummy_bblock = [{label= loop_stmt_ret_lbl; insns= [] ;terminator= Ll.Br(vdecl_ret_lbl);}] in
 			let ret_bblocks = [vdecl_bblock] @ for_etc_bblocks @ loop_stmt_bblocks @ loop_dummy_bblock in 
 				(ret_bblocks,ret_lbl)	
-				
-				
+
 		 *)
 		| Block b -> let bblocks, new_ctxt, blk_ret_lbl=  compile_block b ip_ctxt entry_lbl in
 						(bblocks, blk_ret_lbl)

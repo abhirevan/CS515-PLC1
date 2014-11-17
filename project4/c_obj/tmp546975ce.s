@@ -1,0 +1,24 @@
+	.align 4
+	.text
+.globl program
+program:
+	pushl %ebp
+	movl %esp,%ebp
+	subl $800,%esp
+	pushl %edx
+	pushl %ecx
+	jmp __14
+__14:
+	jmp __15
+__15:
+	movl $0,%ecx
+	movl $4,%eax
+	addl %ecx,%eax
+	movl %eax,0(%ebp)
+	movl %eax,0(%ebp)
+	popl %ecx
+	popl %edx
+	addl $800,%esp
+	movl %esp,%ebp
+	popl %ebp
+	ret

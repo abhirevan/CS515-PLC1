@@ -1,58 +1,53 @@
 Configuring platform...
-[Linux]
+[Mac OS]
 compiling:
 
 return 4;
 * TMP FILES:
-*  c_obj/tmp5468d661.s
-*  c_obj/tmp5468d661.o
-*  c_bin/tmp5468d661
-* gcc -mstackrealign -c -m32 -o c_obj/tmp5468d661.o c_obj/tmp5468d661.s
-* gcc -mstackrealign -m32 -o c_bin/tmp5468d661 c_obj/tmp5468d661.o runtime.c   
-* ./c_bin/tmp5468d661 42 > c_bin/tmp5468d661.out 2>&1
+*  c_obj/tmp546971ef.s
+*  c_obj/tmp546971ef.o
+*  c_bin/tmp546971af
+* gcc -mstackrealign -c -m32 -o c_obj/tmp546971ef.o c_obj/tmp546971ef.s
+* gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971af c_obj/tmp546971ef.o runtime.c   
 compiling:
 int x = 3;
 return x;
 * TMP FILES:
-*  c_obj/tmp5468d662.s
-*  c_obj/tmp5468d662.o
-*  c_bin/tmp5468d662
-* gcc -mstackrealign -c -m32 -o c_obj/tmp5468d662.o c_obj/tmp5468d662.s
-* gcc -mstackrealign -m32 -o c_bin/tmp5468d662 c_obj/tmp5468d662.o runtime.c   
-* ./c_bin/tmp5468d662 42 > c_bin/tmp5468d662.out 2>&1
+*  c_obj/tmp546971f0.s
+*  c_obj/tmp546971f0.o
+*  c_bin/tmp546971af
+* gcc -mstackrealign -c -m32 -o c_obj/tmp546971f0.o c_obj/tmp546971f0.s
+* gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971af c_obj/tmp546971f0.o runtime.c   
 compiling:
 int x = 3;
 int y = 4;
 return x + y;
 * TMP FILES:
-*  c_obj/tmp5468d663.s
-*  c_obj/tmp5468d663.o
-*  c_bin/tmp5468d663
-* gcc -mstackrealign -c -m32 -o c_obj/tmp5468d663.o c_obj/tmp5468d663.s
-* gcc -mstackrealign -m32 -o c_bin/tmp5468d663 c_obj/tmp5468d663.o runtime.c   
-* ./c_bin/tmp5468d663 42 > c_bin/tmp5468d663.out 2>&1
+*  c_obj/tmp546971f1.s
+*  c_obj/tmp546971f1.o
+*  c_bin/tmp546971af
+* gcc -mstackrealign -c -m32 -o c_obj/tmp546971f1.o c_obj/tmp546971f1.s
+* gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971af c_obj/tmp546971f1.o runtime.c   
 compiling:
 int x = 3;
 if (x == 0) x = x + 1;
 return x;
 * TMP FILES:
-*  c_obj/tmp5468d664.s
-*  c_obj/tmp5468d664.o
-*  c_bin/tmp5468d664
-* gcc -mstackrealign -c -m32 -o c_obj/tmp5468d664.o c_obj/tmp5468d664.s
-* gcc -mstackrealign -m32 -o c_bin/tmp5468d664 c_obj/tmp5468d664.o runtime.c   
-* ./c_bin/tmp5468d664 42 > c_bin/tmp5468d664.out 2>&1
+*  c_obj/tmp546971f2.s
+*  c_obj/tmp546971f2.o
+*  c_bin/tmp546971af
+* gcc -mstackrealign -c -m32 -o c_obj/tmp546971f2.o c_obj/tmp546971f2.s
+* gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971af c_obj/tmp546971f2.o runtime.c   
 compiling:
 int x = 3;
 if (x == 3) x = x + 1;
 return x;
 * TMP FILES:
-*  c_obj/tmp5468d665.s
-*  c_obj/tmp5468d665.o
-*  c_bin/tmp5468d665
-* gcc -mstackrealign -c -m32 -o c_obj/tmp5468d665.o c_obj/tmp5468d665.s
-* gcc -mstackrealign -m32 -o c_bin/tmp5468d665 c_obj/tmp5468d665.o runtime.c   
-* ./c_bin/tmp5468d665 42 > c_bin/tmp5468d665.out 2>&1
+*  c_obj/tmp546971f3.s
+*  c_obj/tmp546971f3.o
+*  c_bin/tmp546971af
+* gcc -mstackrealign -c -m32 -o c_obj/tmp546971f3.o c_obj/tmp546971f3.s
+* gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971af c_obj/tmp546971f3.o runtime.c   
 compiling:
 int x = 3;
 if (x == 0) {
@@ -60,12 +55,11 @@ if (x == 0) {
 }
 return x;
 * TMP FILES:
-*  c_obj/tmp5468d666.s
-*  c_obj/tmp5468d666.o
-*  c_bin/tmp5468d666
-* gcc -mstackrealign -c -m32 -o c_obj/tmp5468d666.o c_obj/tmp5468d666.s
-* gcc -mstackrealign -m32 -o c_bin/tmp5468d666 c_obj/tmp5468d666.o runtime.c   
-* ./c_bin/tmp5468d666 42 > c_bin/tmp5468d666.out 2>&1
+*  c_obj/tmp546971f4.s
+*  c_obj/tmp546971f4.o
+*  c_bin/tmp546971af
+* gcc -mstackrealign -c -m32 -o c_obj/tmp546971f4.o c_obj/tmp546971f4.s
+* gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971af c_obj/tmp546971f4.o runtime.c   
 compiling:
 int x = 1;
 {
@@ -73,9 +67,11 @@ int x = 1;
 }
 return x;
 * TMP FILES:
-*  c_obj/tmp5468d667.s
-*  c_obj/tmp5468d667.o
-*  c_bin/tmp5468d667
+*  c_obj/tmp546971f5.s
+*  c_obj/tmp546971f5.o
+*  c_bin/tmp546971b0
+* gcc -mstackrealign -c -m32 -o c_obj/tmp546971f5.o c_obj/tmp546971f5.s
+* gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b0 c_obj/tmp546971f5.o runtime.c   
 compiling:
 int x = 1;
 int y = 0;
@@ -85,33 +81,33 @@ int y = 0;
 } y = y + x;
 return y;
 * TMP FILES:
-*  c_obj/tmp5468d667.s
-*  c_obj/tmp5468d667.o
-*  c_bin/tmp5468d667
+*  c_obj/tmp546971f6.s
+*  c_obj/tmp546971f6.o
+*  c_bin/tmp546971b0
+* gcc -mstackrealign -c -m32 -o c_obj/tmp546971f6.o c_obj/tmp546971f6.s
+* gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b0 c_obj/tmp546971f6.o runtime.c   
 compiling:
 int x = 0;
 int y = 1;
 if (x == 0) if (y == 1) x = 1; else x = 2;
 return x;
 * TMP FILES:
-*  c_obj/tmp5468d667.s
-*  c_obj/tmp5468d667.o
-*  c_bin/tmp5468d667
-* gcc -mstackrealign -c -m32 -o c_obj/tmp5468d667.o c_obj/tmp5468d667.s
-* gcc -mstackrealign -m32 -o c_bin/tmp5468d667 c_obj/tmp5468d667.o runtime.c   
-* ./c_bin/tmp5468d667 42 > c_bin/tmp5468d667.out 2>&1
+*  c_obj/tmp546971f7.s
+*  c_obj/tmp546971f7.o
+*  c_bin/tmp546971b0
+* gcc -mstackrealign -c -m32 -o c_obj/tmp546971f7.o c_obj/tmp546971f7.s
+* gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b0 c_obj/tmp546971f7.o runtime.c   
 compiling:
 int x = 0;
 int y = 1;
 if (x == 1) if (y == 1) x = 1; else x = 2;
 return x;
 * TMP FILES:
-*  c_obj/tmp5468d668.s
-*  c_obj/tmp5468d668.o
-*  c_bin/tmp5468d668
-* gcc -mstackrealign -c -m32 -o c_obj/tmp5468d668.o c_obj/tmp5468d668.s
-* gcc -mstackrealign -m32 -o c_bin/tmp5468d668 c_obj/tmp5468d668.o runtime.c   
-* ./c_bin/tmp5468d668 42 > c_bin/tmp5468d668.out 2>&1
+*  c_obj/tmp546971f8.s
+*  c_obj/tmp546971f8.o
+*  c_bin/tmp546971b0
+* gcc -mstackrealign -c -m32 -o c_obj/tmp546971f8.o c_obj/tmp546971f8.s
+* gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b0 c_obj/tmp546971f8.o runtime.c   
 compiling:
 int x = 3 + 4;
 int y = 17 * 5;
@@ -119,96 +115,88 @@ int z = 0;
 if (x == y) z = 3; else z = 4;
 return z;
 * TMP FILES:
-*  c_obj/tmp5468d669.s
-*  c_obj/tmp5468d669.o
-*  c_bin/tmp5468d669
-* gcc -mstackrealign -c -m32 -o c_obj/tmp5468d669.o c_obj/tmp5468d669.s
-* gcc -mstackrealign -m32 -o c_bin/tmp5468d669 c_obj/tmp5468d669.o runtime.c   
-* ./c_bin/tmp5468d669 42 > c_bin/tmp5468d669.out 2>&1
+*  c_obj/tmp546971f9.s
+*  c_obj/tmp546971f9.o
+*  c_bin/tmp546971b0
+* gcc -mstackrealign -c -m32 -o c_obj/tmp546971f9.o c_obj/tmp546971f9.s
+* gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b0 c_obj/tmp546971f9.o runtime.c   
 compiling:
 int x = 0;
 int y = 1;
 if (x == 0) if (y == 0) x = 1; else x = 2;
 return x;
 * TMP FILES:
-*  c_obj/tmp5468d66a.s
-*  c_obj/tmp5468d66a.o
-*  c_bin/tmp5468d66a
-* gcc -mstackrealign -c -m32 -o c_obj/tmp5468d66a.o c_obj/tmp5468d66a.s
-* gcc -mstackrealign -m32 -o c_bin/tmp5468d66a c_obj/tmp5468d66a.o runtime.c   
-* ./c_bin/tmp5468d66a 42 > c_bin/tmp5468d66a.out 2>&1
+*  c_obj/tmp546971fa.s
+*  c_obj/tmp546971fa.o
+*  c_bin/tmp546971b0
+* gcc -mstackrealign -c -m32 -o c_obj/tmp546971fa.o c_obj/tmp546971fa.s
+* gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b0 c_obj/tmp546971fa.o runtime.c   
 compiling:
 int x = 0;
 int y = 1;
 if (x == 0) if (y == 1) x = 1;
 return x;
 * TMP FILES:
-*  c_obj/tmp5468d66b.s
-*  c_obj/tmp5468d66b.o
-*  c_bin/tmp5468d66b
-* gcc -mstackrealign -c -m32 -o c_obj/tmp5468d66b.o c_obj/tmp5468d66b.s
-* gcc -mstackrealign -m32 -o c_bin/tmp5468d66b c_obj/tmp5468d66b.o runtime.c   
-* ./c_bin/tmp5468d66b 42 > c_bin/tmp5468d66b.out 2>&1
+*  c_obj/tmp546971fb.s
+*  c_obj/tmp546971fb.o
+*  c_bin/tmp546971b0
+* gcc -mstackrealign -c -m32 -o c_obj/tmp546971fb.o c_obj/tmp546971fb.s
+* gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b0 c_obj/tmp546971fb.o runtime.c   
 compiling:
 int x = 0;
 int y = 1;
 if (x == 0) if (y == 0) x = 1;
 return x;
 * TMP FILES:
-*  c_obj/tmp5468d66c.s
-*  c_obj/tmp5468d66c.o
-*  c_bin/tmp5468d66c
-* gcc -mstackrealign -c -m32 -o c_obj/tmp5468d66c.o c_obj/tmp5468d66c.s
-* gcc -mstackrealign -m32 -o c_bin/tmp5468d66c c_obj/tmp5468d66c.o runtime.c   
-* ./c_bin/tmp5468d66c 42 > c_bin/tmp5468d66c.out 2>&1
+*  c_obj/tmp546971fc.s
+*  c_obj/tmp546971fc.o
+*  c_bin/tmp546971b0
+* gcc -mstackrealign -c -m32 -o c_obj/tmp546971fc.o c_obj/tmp546971fc.s
+* gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b0 c_obj/tmp546971fc.o runtime.c   
 compiling:
 int x = 0;
 int y = 1;
 if (x == 1) if (y == 1) x = 1;
 return x;
 * TMP FILES:
-*  c_obj/tmp5468d66d.s
-*  c_obj/tmp5468d66d.o
-*  c_bin/tmp5468d66d
-* gcc -mstackrealign -c -m32 -o c_obj/tmp5468d66d.o c_obj/tmp5468d66d.s
-* gcc -mstackrealign -m32 -o c_bin/tmp5468d66d c_obj/tmp5468d66d.o runtime.c   
-* ./c_bin/tmp5468d66d 42 > c_bin/tmp5468d66d.out 2>&1
+*  c_obj/tmp546971fd.s
+*  c_obj/tmp546971fd.o
+*  c_bin/tmp546971b0
+* gcc -mstackrealign -c -m32 -o c_obj/tmp546971fd.o c_obj/tmp546971fd.s
+* gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b0 c_obj/tmp546971fd.o runtime.c   
 compiling:
 int x = 0;
 int y = 1;
 if (x == 1) x = 2; else if (y == 1) x = 1;
 return x;
 * TMP FILES:
-*  c_obj/tmp5468d66e.s
-*  c_obj/tmp5468d66e.o
-*  c_bin/tmp5468d66e
-* gcc -mstackrealign -c -m32 -o c_obj/tmp5468d66e.o c_obj/tmp5468d66e.s
-* gcc -mstackrealign -m32 -o c_bin/tmp5468d66e c_obj/tmp5468d66e.o runtime.c   
-* ./c_bin/tmp5468d66e 42 > c_bin/tmp5468d66e.out 2>&1
+*  c_obj/tmp546971fe.s
+*  c_obj/tmp546971fe.o
+*  c_bin/tmp546971b0
+* gcc -mstackrealign -c -m32 -o c_obj/tmp546971fe.o c_obj/tmp546971fe.s
+* gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b0 c_obj/tmp546971fe.o runtime.c   
 compiling:
 int x = 0;
 int y = 1;
 if (x == 0) x = 2; else if (y == 1) x = 1;
 return x;
 * TMP FILES:
-*  c_obj/tmp5468d66f.s
-*  c_obj/tmp5468d66f.o
-*  c_bin/tmp5468d66f
-* gcc -mstackrealign -c -m32 -o c_obj/tmp5468d66f.o c_obj/tmp5468d66f.s
-* gcc -mstackrealign -m32 -o c_bin/tmp5468d66f c_obj/tmp5468d66f.o runtime.c   
-* ./c_bin/tmp5468d66f 42 > c_bin/tmp5468d66f.out 2>&1
+*  c_obj/tmp546971ff.s
+*  c_obj/tmp546971ff.o
+*  c_bin/tmp546971b1
+* gcc -mstackrealign -c -m32 -o c_obj/tmp546971ff.o c_obj/tmp546971ff.s
+* gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b1 c_obj/tmp546971ff.o runtime.c   
 compiling:
 int x = 0;
 int y = 1;
 if (x == 1) x = 2; else if (y == 0) x = 1;
 return x;
 * TMP FILES:
-*  c_obj/tmp5468d670.s
-*  c_obj/tmp5468d670.o
-*  c_bin/tmp5468d670
-* gcc -mstackrealign -c -m32 -o c_obj/tmp5468d670.o c_obj/tmp5468d670.s
-* gcc -mstackrealign -m32 -o c_bin/tmp5468d670 c_obj/tmp5468d670.o runtime.c   
-* ./c_bin/tmp5468d670 42 > c_bin/tmp5468d670.out 2>&1
+*  c_obj/tmp54697200.s
+*  c_obj/tmp54697200.o
+*  c_bin/tmp546971b1
+* gcc -mstackrealign -c -m32 -o c_obj/tmp54697200.o c_obj/tmp54697200.s
+* gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b1 c_obj/tmp54697200.o runtime.c   
 compiling:
 int x = 0;
 int y = 1;
@@ -216,12 +204,11 @@ if (x == 1) if (y == 1) x = 1; else x = 2; else if (y == 1) x = 3; else
 x = 4;
 return x;
 * TMP FILES:
-*  c_obj/tmp5468d671.s
-*  c_obj/tmp5468d671.o
-*  c_bin/tmp5468d671
-* gcc -mstackrealign -c -m32 -o c_obj/tmp5468d671.o c_obj/tmp5468d671.s
-* gcc -mstackrealign -m32 -o c_bin/tmp5468d671 c_obj/tmp5468d671.o runtime.c   
-* ./c_bin/tmp5468d671 42 > c_bin/tmp5468d671.out 2>&1
+*  c_obj/tmp54697201.s
+*  c_obj/tmp54697201.o
+*  c_bin/tmp546971b1
+* gcc -mstackrealign -c -m32 -o c_obj/tmp54697201.o c_obj/tmp54697201.s
+* gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b1 c_obj/tmp54697201.o runtime.c   
 compiling:
 int x = 0;
 int y = 1;
@@ -229,12 +216,11 @@ if (x == 0) if (y == 1) x = 1; else x = 2; else if (y == 1) x = 3; else
 x = 4;
 return x;
 * TMP FILES:
-*  c_obj/tmp5468d672.s
-*  c_obj/tmp5468d672.o
-*  c_bin/tmp5468d672
-* gcc -mstackrealign -c -m32 -o c_obj/tmp5468d672.o c_obj/tmp5468d672.s
-* gcc -mstackrealign -m32 -o c_bin/tmp5468d672 c_obj/tmp5468d672.o runtime.c   
-* ./c_bin/tmp5468d672 42 > c_bin/tmp5468d672.out 2>&1
+*  c_obj/tmp54697202.s
+*  c_obj/tmp54697202.o
+*  c_bin/tmp546971b1
+* gcc -mstackrealign -c -m32 -o c_obj/tmp54697202.o c_obj/tmp54697202.s
+* gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b1 c_obj/tmp54697202.o runtime.c   
 compiling:
 int x = 0;
 int y = 1;
@@ -242,12 +228,11 @@ if (x == 0) if (y == 0) x = 1; else x = 2; else if (y == 1) x = 3; else
 x = 4;
 return x;
 * TMP FILES:
-*  c_obj/tmp5468d673.s
-*  c_obj/tmp5468d673.o
-*  c_bin/tmp5468d673
-* gcc -mstackrealign -c -m32 -o c_obj/tmp5468d673.o c_obj/tmp5468d673.s
-* gcc -mstackrealign -m32 -o c_bin/tmp5468d673 c_obj/tmp5468d673.o runtime.c   
-* ./c_bin/tmp5468d673 42 > c_bin/tmp5468d673.out 2>&1
+*  c_obj/tmp54697203.s
+*  c_obj/tmp54697203.o
+*  c_bin/tmp546971b1
+* gcc -mstackrealign -c -m32 -o c_obj/tmp54697203.o c_obj/tmp54697203.s
+* gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b1 c_obj/tmp54697203.o runtime.c   
 compiling:
 int x = 0;
 int y = 1;
@@ -255,12 +240,11 @@ if (x == 1) if (y == 1) x = 1; else x = 2; else if (y == 0) x = 3; else
 x = 4;
 return x;
 * TMP FILES:
-*  c_obj/tmp5468d674.s
-*  c_obj/tmp5468d674.o
-*  c_bin/tmp5468d674
-* gcc -mstackrealign -c -m32 -o c_obj/tmp5468d674.o c_obj/tmp5468d674.s
-* gcc -mstackrealign -m32 -o c_bin/tmp5468d674 c_obj/tmp5468d674.o runtime.c   
-* ./c_bin/tmp5468d674 42 > c_bin/tmp5468d674.out 2>&1
+*  c_obj/tmp54697204.s
+*  c_obj/tmp54697204.o
+*  c_bin/tmp546971b1
+* gcc -mstackrealign -c -m32 -o c_obj/tmp54697204.o c_obj/tmp54697204.s
+* gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b1 c_obj/tmp54697204.o runtime.c   
 compiling:
 int x = 3;
 if (x <= 3) {
@@ -269,12 +253,11 @@ if (x <= 3) {
 }
 return x;
 * TMP FILES:
-*  c_obj/tmp5468d675.s
-*  c_obj/tmp5468d675.o
-*  c_bin/tmp5468d675
-* gcc -mstackrealign -c -m32 -o c_obj/tmp5468d675.o c_obj/tmp5468d675.s
-* gcc -mstackrealign -m32 -o c_bin/tmp5468d675 c_obj/tmp5468d675.o runtime.c   
-* ./c_bin/tmp5468d675 42 > c_bin/tmp5468d675.out 2>&1
+*  c_obj/tmp54697205.s
+*  c_obj/tmp54697205.o
+*  c_bin/tmp546971b1
+* gcc -mstackrealign -c -m32 -o c_obj/tmp54697205.o c_obj/tmp54697205.s
+* gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b1 c_obj/tmp54697205.o runtime.c   
 compiling:
 int x = 3;
 if (x < 100) {
@@ -283,9 +266,11 @@ if (x < 100) {
 }
 return x;
 * TMP FILES:
-*  c_obj/tmp5468d676.s
-*  c_obj/tmp5468d676.o
-*  c_bin/tmp5468d676
+*  c_obj/tmp54697206.s
+*  c_obj/tmp54697206.o
+*  c_bin/tmp546971b1
+* gcc -mstackrealign -c -m32 -o c_obj/tmp54697206.o c_obj/tmp54697206.s
+* gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b1 c_obj/tmp54697206.o runtime.c   
 compiling:
 int x = 3;
 if (x < 3) {
@@ -297,12 +282,11 @@ if (x < 3) {
 }
 return x;
 * TMP FILES:
-*  c_obj/tmp5468d676.s
-*  c_obj/tmp5468d676.o
-*  c_bin/tmp5468d676
-* gcc -mstackrealign -c -m32 -o c_obj/tmp5468d676.o c_obj/tmp5468d676.s
-* gcc -mstackrealign -m32 -o c_bin/tmp5468d676 c_obj/tmp5468d676.o runtime.c   
-* ./c_bin/tmp5468d676 42 > c_bin/tmp5468d676.out 2>&1
+*  c_obj/tmp54697207.s
+*  c_obj/tmp54697207.o
+*  c_bin/tmp546971b1
+* gcc -mstackrealign -c -m32 -o c_obj/tmp54697207.o c_obj/tmp54697207.s
+* gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b1 c_obj/tmp54697207.o runtime.c   
 compiling:
 int x = 3;
 if (x < 3) x = x + 1; else {
@@ -313,9 +297,11 @@ if (x < 3) x = x + 1; else {
 }
 return x;
 * TMP FILES:
-*  c_obj/tmp5468d677.s
-*  c_obj/tmp5468d677.o
-*  c_bin/tmp5468d677
+*  c_obj/tmp54697208.s
+*  c_obj/tmp54697208.o
+*  c_bin/tmp546971b1
+* gcc -mstackrealign -c -m32 -o c_obj/tmp54697208.o c_obj/tmp54697208.s
+* gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b1 c_obj/tmp54697208.o runtime.c   
 compiling:
 int x = 3;
 if (x < 3) {
@@ -324,12 +310,11 @@ if (x < 3) {
 } else x = x * x;
 return x;
 * TMP FILES:
-*  c_obj/tmp5468d677.s
-*  c_obj/tmp5468d677.o
-*  c_bin/tmp5468d677
-* gcc -mstackrealign -c -m32 -o c_obj/tmp5468d677.o c_obj/tmp5468d677.s
-* gcc -mstackrealign -m32 -o c_bin/tmp5468d677 c_obj/tmp5468d677.o runtime.c   
-* ./c_bin/tmp5468d677 42 > c_bin/tmp5468d677.out 2>&1
+*  c_obj/tmp54697209.s
+*  c_obj/tmp54697209.o
+*  c_bin/tmp546971b2
+* gcc -mstackrealign -c -m32 -o c_obj/tmp54697209.o c_obj/tmp54697209.s
+* gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b2 c_obj/tmp54697209.o runtime.c   
 compiling:
 int x = 3;
 if (x < 2) {
@@ -341,9 +326,11 @@ if (x < 2) {
 }
 return x;
 * TMP FILES:
-*  c_obj/tmp5468d678.s
-*  c_obj/tmp5468d678.o
-*  c_bin/tmp5468d678
+*  c_obj/tmp5469720a.s
+*  c_obj/tmp5469720a.o
+*  c_bin/tmp546971b2
+* gcc -mstackrealign -c -m32 -o c_obj/tmp5469720a.o c_obj/tmp5469720a.s
+* gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b2 c_obj/tmp5469720a.o runtime.c   
 compiling:
 int x = 6;
 int acc = 1;
@@ -353,23 +340,21 @@ while (x > 0) {
 }
 return acc;
 * TMP FILES:
-*  c_obj/tmp5468d678.s
-*  c_obj/tmp5468d678.o
-*  c_bin/tmp5468d678
-* gcc -mstackrealign -c -m32 -o c_obj/tmp5468d678.o c_obj/tmp5468d678.s
-* gcc -mstackrealign -m32 -o c_bin/tmp5468d678 c_obj/tmp5468d678.o runtime.c   
-* ./c_bin/tmp5468d678 42 > c_bin/tmp5468d678.out 2>&1
+*  c_obj/tmp5469720b.s
+*  c_obj/tmp5469720b.o
+*  c_bin/tmp546971b2
+* gcc -mstackrealign -c -m32 -o c_obj/tmp5469720b.o c_obj/tmp5469720b.s
+* gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b2 c_obj/tmp5469720b.o runtime.c   
 compiling:
 int x = 1;
 while (x < 10) x = x + 1;
 return x;
 * TMP FILES:
-*  c_obj/tmp5468d679.s
-*  c_obj/tmp5468d679.o
-*  c_bin/tmp5468d679
-* gcc -mstackrealign -c -m32 -o c_obj/tmp5468d679.o c_obj/tmp5468d679.s
-* gcc -mstackrealign -m32 -o c_bin/tmp5468d679 c_obj/tmp5468d679.o runtime.c   
-* ./c_bin/tmp5468d679 42 > c_bin/tmp5468d679.out 2>&1
+*  c_obj/tmp5469720c.s
+*  c_obj/tmp5469720c.o
+*  c_bin/tmp546971b2
+* gcc -mstackrealign -c -m32 -o c_obj/tmp5469720c.o c_obj/tmp5469720c.s
+* gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b2 c_obj/tmp5469720c.o runtime.c   
 compiling:
 int z = 0;
 int x = z;
@@ -378,47 +363,43 @@ while (z >= 1024 * x) {
 }
 return z;
 * TMP FILES:
-*  c_obj/tmp5468d67a.s
-*  c_obj/tmp5468d67a.o
-*  c_bin/tmp5468d67a
-* gcc -mstackrealign -c -m32 -o c_obj/tmp5468d67a.o c_obj/tmp5468d67a.s
-* gcc -mstackrealign -m32 -o c_bin/tmp5468d67a c_obj/tmp5468d67a.o runtime.c   
-* ./c_bin/tmp5468d67a 42 > c_bin/tmp5468d67a.out 2>&1
+*  c_obj/tmp5469720d.s
+*  c_obj/tmp5469720d.o
+*  c_bin/tmp546971b2
+* gcc -mstackrealign -c -m32 -o c_obj/tmp5469720d.o c_obj/tmp5469720d.s
+* gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b2 c_obj/tmp5469720d.o runtime.c   
 compiling:
 int x = 19 - 18;
 int y = 0;
 while (x <= 19) if (y <= 0) x = x + 1; else x = 100;
 return x;
 * TMP FILES:
-*  c_obj/tmp5468d67b.s
-*  c_obj/tmp5468d67b.o
-*  c_bin/tmp5468d67b
-* gcc -mstackrealign -c -m32 -o c_obj/tmp5468d67b.o c_obj/tmp5468d67b.s
-* gcc -mstackrealign -m32 -o c_bin/tmp5468d67b c_obj/tmp5468d67b.o runtime.c   
-* ./c_bin/tmp5468d67b 42 > c_bin/tmp5468d67b.out 2>&1
+*  c_obj/tmp5469720e.s
+*  c_obj/tmp5469720e.o
+*  c_bin/tmp546971b2
+* gcc -mstackrealign -c -m32 -o c_obj/tmp5469720e.o c_obj/tmp5469720e.s
+* gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b2 c_obj/tmp5469720e.o runtime.c   
 compiling:
 int x = 19 - 18;
 int y = 1;
 while (x <= 19) if (y <= 0) x = x + 1; else x = 100;
 return x;
 * TMP FILES:
-*  c_obj/tmp5468d67c.s
-*  c_obj/tmp5468d67c.o
-*  c_bin/tmp5468d67c
-* gcc -mstackrealign -c -m32 -o c_obj/tmp5468d67c.o c_obj/tmp5468d67c.s
-* gcc -mstackrealign -m32 -o c_bin/tmp5468d67c c_obj/tmp5468d67c.o runtime.c   
-* ./c_bin/tmp5468d67c 42 > c_bin/tmp5468d67c.out 2>&1
+*  c_obj/tmp5469720f.s
+*  c_obj/tmp5469720f.o
+*  c_bin/tmp546971b2
+* gcc -mstackrealign -c -m32 -o c_obj/tmp5469720f.o c_obj/tmp5469720f.s
+* gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b2 c_obj/tmp5469720f.o runtime.c   
 compiling:
 int x = 0;
 for (int i = 0; i < 100; i = i + 1;) x = x + 1;
 return x;
 * TMP FILES:
-*  c_obj/tmp5468d67d.s
-*  c_obj/tmp5468d67d.o
-*  c_bin/tmp5468d67d
-* gcc -mstackrealign -c -m32 -o c_obj/tmp5468d67d.o c_obj/tmp5468d67d.s
-* gcc -mstackrealign -m32 -o c_bin/tmp5468d67d c_obj/tmp5468d67d.o runtime.c   
-* ./c_bin/tmp5468d67d 42 > c_bin/tmp5468d67d.out 2>&1
+*  c_obj/tmp54697210.s
+*  c_obj/tmp54697210.o
+*  c_bin/tmp546971b2
+* gcc -mstackrealign -c -m32 -o c_obj/tmp54697210.o c_obj/tmp54697210.s
+* gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b2 c_obj/tmp54697210.o runtime.c   
 compiling:
 int x = 0;
 for (int x = 1; 0; ) {
@@ -426,9 +407,11 @@ for (int x = 1; 0; ) {
 }
 return x;
 * TMP FILES:
-*  c_obj/tmp5468d67e.s
-*  c_obj/tmp5468d67e.o
-*  c_bin/tmp5468d67e
+*  c_obj/tmp54697211.s
+*  c_obj/tmp54697211.o
+*  c_bin/tmp546971b2
+* gcc -mstackrealign -c -m32 -o c_obj/tmp54697211.o c_obj/tmp54697211.s
+* gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b2 c_obj/tmp54697211.o runtime.c   
 compiling:
 int z = 0;
 int y = z * z + 98;
@@ -437,12 +420,11 @@ z < 100;
 ) if (y < 100) z = z + 1; else z = 1000;
 return z;
 * TMP FILES:
-*  c_obj/tmp5468d67e.s
-*  c_obj/tmp5468d67e.o
-*  c_bin/tmp5468d67e
-* gcc -mstackrealign -c -m32 -o c_obj/tmp5468d67e.o c_obj/tmp5468d67e.s
-* gcc -mstackrealign -m32 -o c_bin/tmp5468d67e c_obj/tmp5468d67e.o runtime.c   
-* ./c_bin/tmp5468d67e 42 > c_bin/tmp5468d67e.out 2>&1
+*  c_obj/tmp54697212.s
+*  c_obj/tmp54697212.o
+*  c_bin/tmp546971b2
+* gcc -mstackrealign -c -m32 -o c_obj/tmp54697212.o c_obj/tmp54697212.s
+* gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b2 c_obj/tmp54697212.o runtime.c   
 compiling:
 int z = 0;
 int y = z * z + 98 << 40;
@@ -451,23 +433,21 @@ z < 100;
 ) if (y < 100) z = z + 1; else z = 1000;
 return z;
 * TMP FILES:
-*  c_obj/tmp5468d67f.s
-*  c_obj/tmp5468d67f.o
-*  c_bin/tmp5468d67f
-* gcc -mstackrealign -c -m32 -o c_obj/tmp5468d67f.o c_obj/tmp5468d67f.s
-* gcc -mstackrealign -m32 -o c_bin/tmp5468d67f c_obj/tmp5468d67f.o runtime.c   
-* ./c_bin/tmp5468d67f 42 > c_bin/tmp5468d67f.out 2>&1
+*  c_obj/tmp54697213.s
+*  c_obj/tmp54697213.o
+*  c_bin/tmp546971b3
+* gcc -mstackrealign -c -m32 -o c_obj/tmp54697213.o c_obj/tmp54697213.s
+* gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b3 c_obj/tmp54697213.o runtime.c   
 compiling:
 int x = 1;
 while (x < 10) if (x < 2) x = 100 | 1;
 return x;
 * TMP FILES:
-*  c_obj/tmp5468d680.s
-*  c_obj/tmp5468d680.o
-*  c_bin/tmp5468d680
-* gcc -mstackrealign -c -m32 -o c_obj/tmp5468d680.o c_obj/tmp5468d680.s
-* gcc -mstackrealign -m32 -o c_bin/tmp5468d680 c_obj/tmp5468d680.o runtime.c   
-* ./c_bin/tmp5468d680 42 > c_bin/tmp5468d680.out 2>&1
+*  c_obj/tmp54697214.s
+*  c_obj/tmp54697214.o
+*  c_bin/tmp546971b3
+* gcc -mstackrealign -c -m32 -o c_obj/tmp54697214.o c_obj/tmp54697214.s
+* gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b3 c_obj/tmp54697214.o runtime.c   
 compiling:
 int x = 1 > 0;
 for (int abcd = x;
@@ -475,12 +455,11 @@ x == abcd;
 x = abcd - 1;) if (x == abcd) abcd = 42;
 return x;
 * TMP FILES:
-*  c_obj/tmp5468d681.s
-*  c_obj/tmp5468d681.o
-*  c_bin/tmp5468d681
-* gcc -mstackrealign -c -m32 -o c_obj/tmp5468d681.o c_obj/tmp5468d681.s
-* gcc -mstackrealign -m32 -o c_bin/tmp5468d681 c_obj/tmp5468d681.o runtime.c   
-* ./c_bin/tmp5468d681 42 > c_bin/tmp5468d681.out 2>&1
+*  c_obj/tmp54697215.s
+*  c_obj/tmp54697215.o
+*  c_bin/tmp546971b3
+* gcc -mstackrealign -c -m32 -o c_obj/tmp54697215.o c_obj/tmp54697215.s
+* gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b3 c_obj/tmp54697215.o runtime.c   
 compiling:
 int x = 1 > 0;
 for (int abcd = x;
@@ -493,36 +472,33 @@ x == abcd;
 }
 return x;
 * TMP FILES:
-*  c_obj/tmp5468d682.s
-*  c_obj/tmp5468d682.o
-*  c_bin/tmp5468d682
-* gcc -mstackrealign -c -m32 -o c_obj/tmp5468d682.o c_obj/tmp5468d682.s
-* gcc -mstackrealign -m32 -o c_bin/tmp5468d682 c_obj/tmp5468d682.o runtime.c   
-* ./c_bin/tmp5468d682 42 > c_bin/tmp5468d682.out 2>&1
+*  c_obj/tmp54697216.s
+*  c_obj/tmp54697216.o
+*  c_bin/tmp546971b3
+* gcc -mstackrealign -c -m32 -o c_obj/tmp54697216.o c_obj/tmp54697216.s
+* gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b3 c_obj/tmp54697216.o runtime.c   
 compiling:
 int x = 0;
 int y = 5;
 if (x == 0) while (x < 10) if (y == 5) x = x + 1; else x = x + 3;
 return x;
 * TMP FILES:
-*  c_obj/tmp5468d683.s
-*  c_obj/tmp5468d683.o
-*  c_bin/tmp5468d683
-* gcc -mstackrealign -c -m32 -o c_obj/tmp5468d683.o c_obj/tmp5468d683.s
-* gcc -mstackrealign -m32 -o c_bin/tmp5468d683 c_obj/tmp5468d683.o runtime.c   
-* ./c_bin/tmp5468d683 42 > c_bin/tmp5468d683.out 2>&1
+*  c_obj/tmp54697217.s
+*  c_obj/tmp54697217.o
+*  c_bin/tmp546971b3
+* gcc -mstackrealign -c -m32 -o c_obj/tmp54697217.o c_obj/tmp54697217.s
+* gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b3 c_obj/tmp54697217.o runtime.c   
 compiling:
 int x = 0;
 int y = 5 >> 100;
 if (x == 0) while (x < 10) if (y == 5) x = x + 1; else x = x + 3;
 return x;
 * TMP FILES:
-*  c_obj/tmp5468d684.s
-*  c_obj/tmp5468d684.o
-*  c_bin/tmp5468d684
-* gcc -mstackrealign -c -m32 -o c_obj/tmp5468d684.o c_obj/tmp5468d684.s
-* gcc -mstackrealign -m32 -o c_bin/tmp5468d684 c_obj/tmp5468d684.o runtime.c   
-* ./c_bin/tmp5468d684 42 > c_bin/tmp5468d684.out 2>&1
+*  c_obj/tmp54697218.s
+*  c_obj/tmp54697218.o
+*  c_bin/tmp546971b3
+* gcc -mstackrealign -c -m32 -o c_obj/tmp54697218.o c_obj/tmp54697218.s
+* gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b3 c_obj/tmp54697218.o runtime.c   
 compiling:
 int x = 0 + 1;
 int z = x + 1;
@@ -532,12 +508,11 @@ i < 100;
 i = i + 1;) if (z == x + 1) y = y - 1; else y = y + 1;
 return y;
 * TMP FILES:
-*  c_obj/tmp5468d685.s
-*  c_obj/tmp5468d685.o
-*  c_bin/tmp5468d685
-* gcc -mstackrealign -c -m32 -o c_obj/tmp5468d685.o c_obj/tmp5468d685.s
-* gcc -mstackrealign -m32 -o c_bin/tmp5468d685 c_obj/tmp5468d685.o runtime.c   
-* ./c_bin/tmp5468d685 42 > c_bin/tmp5468d685.out 2>&1
+*  c_obj/tmp54697219.s
+*  c_obj/tmp54697219.o
+*  c_bin/tmp546971b3
+* gcc -mstackrealign -c -m32 -o c_obj/tmp54697219.o c_obj/tmp54697219.s
+* gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b3 c_obj/tmp54697219.o runtime.c   
 compiling:
 int x = 0 + 1;
 int z = x + 1;
@@ -547,24 +522,22 @@ i < 100;
 i = i + 1;) if (z == x - 1) y = y - 1; else y = y + 1;
 return y;
 * TMP FILES:
-*  c_obj/tmp5468d686.s
-*  c_obj/tmp5468d686.o
-*  c_bin/tmp5468d686
-* gcc -mstackrealign -c -m32 -o c_obj/tmp5468d686.o c_obj/tmp5468d686.s
-* gcc -mstackrealign -m32 -o c_bin/tmp5468d686 c_obj/tmp5468d686.o runtime.c   
-* ./c_bin/tmp5468d686 42 > c_bin/tmp5468d686.out 2>&1
+*  c_obj/tmp5469721a.s
+*  c_obj/tmp5469721a.o
+*  c_bin/tmp546971b3
+* gcc -mstackrealign -c -m32 -o c_obj/tmp5469721a.o c_obj/tmp5469721a.s
+* gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b3 c_obj/tmp5469721a.o runtime.c   
 compiling:
 int i = 0;
 int j = 0;
 while (i == j) if (i == 0) while (j <= i) if (j == 0) j = 1;
 return j;
 * TMP FILES:
-*  c_obj/tmp5468d687.s
-*  c_obj/tmp5468d687.o
-*  c_bin/tmp5468d687
-* gcc -mstackrealign -c -m32 -o c_obj/tmp5468d687.o c_obj/tmp5468d687.s
-* gcc -mstackrealign -m32 -o c_bin/tmp5468d687 c_obj/tmp5468d687.o runtime.c   
-* ./c_bin/tmp5468d687 42 > c_bin/tmp5468d687.out 2>&1
+*  c_obj/tmp5469721b.s
+*  c_obj/tmp5469721b.o
+*  c_bin/tmp546971b3
+* gcc -mstackrealign -c -m32 -o c_obj/tmp5469721b.o c_obj/tmp5469721b.s
+* gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b3 c_obj/tmp5469721b.o runtime.c   
 compiling:
 int i = 0;
 int j = 0;
@@ -577,12 +550,11 @@ j <= i;
 ) if (j == 0) j = 1;
 return j;
 * TMP FILES:
-*  c_obj/tmp5468d688.s
-*  c_obj/tmp5468d688.o
-*  c_bin/tmp5468d688
-* gcc -mstackrealign -c -m32 -o c_obj/tmp5468d688.o c_obj/tmp5468d688.s
-* gcc -mstackrealign -m32 -o c_bin/tmp5468d688 c_obj/tmp5468d688.o runtime.c   
-* ./c_bin/tmp5468d688 42 > c_bin/tmp5468d688.out 2>&1
+*  c_obj/tmp5469721c.s
+*  c_obj/tmp5469721c.o
+*  c_bin/tmp546971b4
+* gcc -mstackrealign -c -m32 -o c_obj/tmp5469721c.o c_obj/tmp5469721c.s
+* gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b4 c_obj/tmp5469721c.o runtime.c   
 compiling:
 int x = 10;
 int y = 0;
@@ -590,12 +562,11 @@ while (x <= 40) if (x <= 20) while (x <= 20) if (x > 0) x = x + 1; else
 x = x + 2; else while (x <= 40) if (x > 0) x = x + 3; else x = x + 4;
 return x;
 * TMP FILES:
-*  c_obj/tmp5468d689.s
-*  c_obj/tmp5468d689.o
-*  c_bin/tmp5468d689
-* gcc -mstackrealign -c -m32 -o c_obj/tmp5468d689.o c_obj/tmp5468d689.s
-* gcc -mstackrealign -m32 -o c_bin/tmp5468d689 c_obj/tmp5468d689.o runtime.c   
-* ./c_bin/tmp5468d689 42 > c_bin/tmp5468d689.out 2>&1
+*  c_obj/tmp5469721d.s
+*  c_obj/tmp5469721d.o
+*  c_bin/tmp546971b4
+* gcc -mstackrealign -c -m32 -o c_obj/tmp5469721d.o c_obj/tmp5469721d.s
+* gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b4 c_obj/tmp5469721d.o runtime.c   
 compiling:
 int x = 31;
 int y = 0;
@@ -603,12 +574,11 @@ while (x <= 40) if (x <= 20) while (x <= 20) if (x > 0) x = x + 1; else
 x = x + 2; else while (x <= 40) if (x > 0) x = x + 3; else x = x + 4;
 return x;
 * TMP FILES:
-*  c_obj/tmp5468d68a.s
-*  c_obj/tmp5468d68a.o
-*  c_bin/tmp5468d68a
-* gcc -mstackrealign -c -m32 -o c_obj/tmp5468d68a.o c_obj/tmp5468d68a.s
-* gcc -mstackrealign -m32 -o c_bin/tmp5468d68a c_obj/tmp5468d68a.o runtime.c   
-* ./c_bin/tmp5468d68a 42 > c_bin/tmp5468d68a.out 2>&1
+*  c_obj/tmp5469721e.s
+*  c_obj/tmp5469721e.o
+*  c_bin/tmp546971b4
+* gcc -mstackrealign -c -m32 -o c_obj/tmp5469721e.o c_obj/tmp5469721e.s
+* gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b4 c_obj/tmp5469721e.o runtime.c   
 compiling:
 int x = 31;
 int y = 0;
@@ -621,12 +591,11 @@ x <= 40;
 ) if (x > 0) x = x + 3; else x = x + 4;
 return x;
 * TMP FILES:
-*  c_obj/tmp5468d68b.s
-*  c_obj/tmp5468d68b.o
-*  c_bin/tmp5468d68b
-* gcc -mstackrealign -c -m32 -o c_obj/tmp5468d68b.o c_obj/tmp5468d68b.s
-* gcc -mstackrealign -m32 -o c_bin/tmp5468d68b c_obj/tmp5468d68b.o runtime.c   
-* ./c_bin/tmp5468d68b 42 > c_bin/tmp5468d68b.out 2>&1
+*  c_obj/tmp5469721f.s
+*  c_obj/tmp5469721f.o
+*  c_bin/tmp546971b4
+* gcc -mstackrealign -c -m32 -o c_obj/tmp5469721f.o c_obj/tmp5469721f.s
+* gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b4 c_obj/tmp5469721f.o runtime.c   
 compiling:
 int x = 1;
 int y = 0;
@@ -639,12 +608,11 @@ x <= 40;
 ) if (x > 0) x = x + 3; else x = x + 4;
 return x;
 * TMP FILES:
-*  c_obj/tmp5468d68c.s
-*  c_obj/tmp5468d68c.o
-*  c_bin/tmp5468d68c
-* gcc -mstackrealign -c -m32 -o c_obj/tmp5468d68c.o c_obj/tmp5468d68c.s
-* gcc -mstackrealign -m32 -o c_bin/tmp5468d68c c_obj/tmp5468d68c.o runtime.c   
-* ./c_bin/tmp5468d68c 42 > c_bin/tmp5468d68c.out 2>&1
+*  c_obj/tmp54697220.s
+*  c_obj/tmp54697220.o
+*  c_bin/tmp546971b4
+* gcc -mstackrealign -c -m32 -o c_obj/tmp54697220.o c_obj/tmp54697220.s
+* gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b4 c_obj/tmp54697220.o runtime.c   
 compiling:
 int x = 0;
 int y = 0;
@@ -652,12 +620,11 @@ if (x * x * x * x * x * x * x * x * x * x != 0) x = 1;
 y = 1;
 return x + y;
 * TMP FILES:
-*  c_obj/tmp5468d68d.s
-*  c_obj/tmp5468d68d.o
-*  c_bin/tmp5468d68d
-* gcc -mstackrealign -c -m32 -o c_obj/tmp5468d68d.o c_obj/tmp5468d68d.s
-* gcc -mstackrealign -m32 -o c_bin/tmp5468d68d c_obj/tmp5468d68d.o runtime.c   
-* ./c_bin/tmp5468d68d 42 > c_bin/tmp5468d68d.out 2>&1
+*  c_obj/tmp54697221.s
+*  c_obj/tmp54697221.o
+*  c_bin/tmp546971b4
+* gcc -mstackrealign -c -m32 -o c_obj/tmp54697221.o c_obj/tmp54697221.s
+* gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b4 c_obj/tmp54697221.o runtime.c   
 compiling:
 int x = 0;
 int y = 0;
@@ -665,24 +632,22 @@ if (x * x * x * x * x * x * x * x * x * x == 0 * 0 * 0 * 0 * 0 * 0) x = 1;
 y = 1;
 return x + y;
 * TMP FILES:
-*  c_obj/tmp5468d68e.s
-*  c_obj/tmp5468d68e.o
-*  c_bin/tmp5468d68e
-* gcc -mstackrealign -c -m32 -o c_obj/tmp5468d68e.o c_obj/tmp5468d68e.s
-* gcc -mstackrealign -m32 -o c_bin/tmp5468d68e c_obj/tmp5468d68e.o runtime.c   
-* ./c_bin/tmp5468d68e 42 > c_bin/tmp5468d68e.out 2>&1
+*  c_obj/tmp54697222.s
+*  c_obj/tmp54697222.o
+*  c_bin/tmp546971b4
+* gcc -mstackrealign -c -m32 -o c_obj/tmp54697222.o c_obj/tmp54697222.s
+* gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b4 c_obj/tmp54697222.o runtime.c   
 compiling:
 int x = 0;
 int y = 0;
 while (x < 10) x = x + 1; y = y + 1;
 return y;
 * TMP FILES:
-*  c_obj/tmp5468d68f.s
-*  c_obj/tmp5468d68f.o
-*  c_bin/tmp5468d68f
-* gcc -mstackrealign -c -m32 -o c_obj/tmp5468d68f.o c_obj/tmp5468d68f.s
-* gcc -mstackrealign -m32 -o c_bin/tmp5468d68f c_obj/tmp5468d68f.o runtime.c   
-* ./c_bin/tmp5468d68f 42 > c_bin/tmp5468d68f.out 2>&1
+*  c_obj/tmp54697223.s
+*  c_obj/tmp54697223.o
+*  c_bin/tmp546971b4
+* gcc -mstackrealign -c -m32 -o c_obj/tmp54697223.o c_obj/tmp54697223.s
+* gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b4 c_obj/tmp54697223.o runtime.c   
 compiling:
 int x = 0;
 int y = 0;
@@ -694,12 +659,11 @@ x < 10;
 y = y + 1;
 return y;
 * TMP FILES:
-*  c_obj/tmp5468d690.s
-*  c_obj/tmp5468d690.o
-*  c_bin/tmp5468d690
-* gcc -mstackrealign -c -m32 -o c_obj/tmp5468d690.o c_obj/tmp5468d690.s
-* gcc -mstackrealign -m32 -o c_bin/tmp5468d690 c_obj/tmp5468d690.o runtime.c   
-* ./c_bin/tmp5468d690 42 > c_bin/tmp5468d690.out 2>&1
+*  c_obj/tmp54697224.s
+*  c_obj/tmp54697224.o
+*  c_bin/tmp546971b4
+* gcc -mstackrealign -c -m32 -o c_obj/tmp54697224.o c_obj/tmp54697224.s
+* gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b4 c_obj/tmp54697224.o runtime.c   
 compiling:
 int x = 0;
 for (int i = 0;
@@ -710,12 +674,11 @@ i = i + 1;) {
 x = x + 1;
 return x;
 * TMP FILES:
-*  c_obj/tmp5468d691.s
-*  c_obj/tmp5468d691.o
-*  c_bin/tmp5468d691
-* gcc -mstackrealign -c -m32 -o c_obj/tmp5468d691.o c_obj/tmp5468d691.s
-* gcc -mstackrealign -m32 -o c_bin/tmp5468d691 c_obj/tmp5468d691.o runtime.c   
-* ./c_bin/tmp5468d691 42 > c_bin/tmp5468d691.out 2>&1
+*  c_obj/tmp54697225.s
+*  c_obj/tmp54697225.o
+*  c_bin/tmp546971b4
+* gcc -mstackrealign -c -m32 -o c_obj/tmp54697225.o c_obj/tmp54697225.s
+* gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b4 c_obj/tmp54697225.o runtime.c   
 compiling:
 int x = 0;
 while (x < 100) {
@@ -723,12 +686,11 @@ while (x < 100) {
 } x = x + 1;
 return x;
 * TMP FILES:
-*  c_obj/tmp5468d692.s
-*  c_obj/tmp5468d692.o
-*  c_bin/tmp5468d692
-* gcc -mstackrealign -c -m32 -o c_obj/tmp5468d692.o c_obj/tmp5468d692.s
-* gcc -mstackrealign -m32 -o c_bin/tmp5468d692 c_obj/tmp5468d692.o runtime.c   
-* ./c_bin/tmp5468d692 42 > c_bin/tmp5468d692.out 2>&1
+*  c_obj/tmp54697226.s
+*  c_obj/tmp54697226.o
+*  c_bin/tmp546971b5
+* gcc -mstackrealign -c -m32 -o c_obj/tmp54697226.o c_obj/tmp54697226.s
+* gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b5 c_obj/tmp54697226.o runtime.c   
 compiling:
 int x = 0;
 if (x < 100) {
@@ -736,12 +698,11 @@ if (x < 100) {
 } x = x + 1;
 return x;
 * TMP FILES:
-*  c_obj/tmp5468d693.s
-*  c_obj/tmp5468d693.o
-*  c_bin/tmp5468d693
-* gcc -mstackrealign -c -m32 -o c_obj/tmp5468d693.o c_obj/tmp5468d693.s
-* gcc -mstackrealign -m32 -o c_bin/tmp5468d693 c_obj/tmp5468d693.o runtime.c   
-* ./c_bin/tmp5468d693 42 > c_bin/tmp5468d693.out 2>&1
+*  c_obj/tmp54697227.s
+*  c_obj/tmp54697227.o
+*  c_bin/tmp546971b5
+* gcc -mstackrealign -c -m32 -o c_obj/tmp54697227.o c_obj/tmp54697227.s
+* gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b5 c_obj/tmp54697227.o runtime.c   
 compiling:
 int a = 0;
 int i = 0;
@@ -766,9 +727,11 @@ if (a > 0) {
 i = i + 1;
 return i + a;
 * TMP FILES:
-*  c_obj/tmp5468d694.s
-*  c_obj/tmp5468d694.o
-*  c_bin/tmp5468d694
+*  c_obj/tmp54697228.s
+*  c_obj/tmp54697228.o
+*  c_bin/tmp546971b5
+* gcc -mstackrealign -c -m32 -o c_obj/tmp54697228.o c_obj/tmp54697228.s
+* gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b5 c_obj/tmp54697228.o runtime.c   
 compiling:
 int a = 0;
 int i = 0;
@@ -793,9 +756,11 @@ j = j + 50;) {
 }
 return i + a * 3 >> 2 << 4;
 * TMP FILES:
-*  c_obj/tmp5468d694.s
-*  c_obj/tmp5468d694.o
-*  c_bin/tmp5468d694
+*  c_obj/tmp54697229.s
+*  c_obj/tmp54697229.o
+*  c_bin/tmp546971b5
+* gcc -mstackrealign -c -m32 -o c_obj/tmp54697229.o c_obj/tmp54697229.s
+* gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b5 c_obj/tmp54697229.o runtime.c   
 compiling:
 int x1 = 0;
 int y1 = x1;
@@ -817,9 +782,11 @@ int y1 = x1;
 }
 return y1;
 * TMP FILES:
-*  c_obj/tmp5468d694.s
-*  c_obj/tmp5468d694.o
-*  c_bin/tmp5468d694
+*  c_obj/tmp5469722a.s
+*  c_obj/tmp5469722a.o
+*  c_bin/tmp546971b5
+* gcc -mstackrealign -c -m32 -o c_obj/tmp5469722a.o c_obj/tmp5469722a.s
+* gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b5 c_obj/tmp5469722a.o runtime.c   
 compiling:
 int x1 = 0;
 int y1 = x1;
@@ -845,9 +812,11 @@ y1 < 10;
 }
 return y1;
 * TMP FILES:
-*  c_obj/tmp5468d694.s
-*  c_obj/tmp5468d694.o
-*  c_bin/tmp5468d694
+*  c_obj/tmp5469722b.s
+*  c_obj/tmp5469722b.o
+*  c_bin/tmp546971b5
+* gcc -mstackrealign -c -m32 -o c_obj/tmp5469722b.o c_obj/tmp5469722b.s
+* gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b5 c_obj/tmp5469722b.o runtime.c   
 compiling:
 int x1 = 0;
 int y = 0;
@@ -878,9 +847,11 @@ int y = 0;
 }
 return y;
 * TMP FILES:
-*  c_obj/tmp5468d694.s
-*  c_obj/tmp5468d694.o
-*  c_bin/tmp5468d694
+*  c_obj/tmp5469722c.s
+*  c_obj/tmp5469722c.o
+*  c_bin/tmp546971b5
+* gcc -mstackrealign -c -m32 -o c_obj/tmp5469722c.o c_obj/tmp5469722c.s
+* gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b5 c_obj/tmp5469722c.o runtime.c   
 compiling:
 {
   {
@@ -921,12 +892,11 @@ compiling:
 }
 return 0;
 * TMP FILES:
-*  c_obj/tmp5468d694.s
-*  c_obj/tmp5468d694.o
-*  c_bin/tmp5468d694
-* gcc -mstackrealign -c -m32 -o c_obj/tmp5468d694.o c_obj/tmp5468d694.s
-* gcc -mstackrealign -m32 -o c_bin/tmp5468d694 c_obj/tmp5468d694.o runtime.c   
-* ./c_bin/tmp5468d694 42 > c_bin/tmp5468d694.out 2>&1
+*  c_obj/tmp5469722d.s
+*  c_obj/tmp5469722d.o
+*  c_bin/tmp546971b5
+* gcc -mstackrealign -c -m32 -o c_obj/tmp5469722d.o c_obj/tmp5469722d.s
+* gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b5 c_obj/tmp5469722d.o runtime.c   
 compiling:
 int x = 1;
 int y = x;
@@ -964,9 +934,11 @@ int y = x;
 }
 return y;
 * TMP FILES:
-*  c_obj/tmp5468d695.s
-*  c_obj/tmp5468d695.o
-*  c_bin/tmp5468d695
+*  c_obj/tmp5469722e.s
+*  c_obj/tmp5469722e.o
+*  c_bin/tmp546971b5
+* gcc -mstackrealign -c -m32 -o c_obj/tmp5469722e.o c_obj/tmp5469722e.s
+* gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b5 c_obj/tmp5469722e.o runtime.c   
 compiling:
 int i = 0;
 while (i < 100) {
@@ -999,12 +971,11 @@ while (i < 100) {
 }
 return i;
 * TMP FILES:
-*  c_obj/tmp5468d695.s
-*  c_obj/tmp5468d695.o
-*  c_bin/tmp5468d695
-* gcc -mstackrealign -c -m32 -o c_obj/tmp5468d695.o c_obj/tmp5468d695.s
-* gcc -mstackrealign -m32 -o c_bin/tmp5468d695 c_obj/tmp5468d695.o runtime.c   
-* ./c_bin/tmp5468d695 42 > c_bin/tmp5468d695.out 2>&1
+*  c_obj/tmp5469722f.s
+*  c_obj/tmp5469722f.o
+*  c_bin/tmp546971b5
+* gcc -mstackrealign -c -m32 -o c_obj/tmp5469722f.o c_obj/tmp5469722f.s
+* gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b5 c_obj/tmp5469722f.o runtime.c   
 compiling:
 int i = 0;
 for (;
@@ -1040,12 +1011,11 @@ i < 100;
 }
 return i;
 * TMP FILES:
-*  c_obj/tmp5468d696.s
-*  c_obj/tmp5468d696.o
-*  c_bin/tmp5468d696
-* gcc -mstackrealign -c -m32 -o c_obj/tmp5468d696.o c_obj/tmp5468d696.s
-* gcc -mstackrealign -m32 -o c_bin/tmp5468d696 c_obj/tmp5468d696.o runtime.c   
-* ./c_bin/tmp5468d696 42 > c_bin/tmp5468d696.out 2>&1
+*  c_obj/tmp54697230.s
+*  c_obj/tmp54697230.o
+*  c_bin/tmp546971b6
+* gcc -mstackrealign -c -m32 -o c_obj/tmp54697230.o c_obj/tmp54697230.s
+* gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b6 c_obj/tmp54697230.o runtime.c   
 compiling:
 int i = 0;
 while (i < 100) {
@@ -1080,12 +1050,11 @@ while (i < 100) {
 }
 return i;
 * TMP FILES:
-*  c_obj/tmp5468d697.s
-*  c_obj/tmp5468d697.o
-*  c_bin/tmp5468d697
-* gcc -mstackrealign -c -m32 -o c_obj/tmp5468d697.o c_obj/tmp5468d697.s
-* gcc -mstackrealign -m32 -o c_bin/tmp5468d697 c_obj/tmp5468d697.o runtime.c   
-* ./c_bin/tmp5468d697 42 > c_bin/tmp5468d697.out 2>&1
+*  c_obj/tmp54697231.s
+*  c_obj/tmp54697231.o
+*  c_bin/tmp546971b6
+* gcc -mstackrealign -c -m32 -o c_obj/tmp54697231.o c_obj/tmp54697231.s
+* gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b6 c_obj/tmp54697231.o runtime.c   
 compiling:
 int x = 1;
 if (x == 1) if (x == 1) if (x == 1) if (x == 1) if (x == 1) if (x == 1) if (
@@ -1095,12 +1064,11 @@ x == 1) if (x == 1) if (x == 1) {
 }
 return x;
 * TMP FILES:
-*  c_obj/tmp5468d698.s
-*  c_obj/tmp5468d698.o
-*  c_bin/tmp5468d698
-* gcc -mstackrealign -c -m32 -o c_obj/tmp5468d698.o c_obj/tmp5468d698.s
-* gcc -mstackrealign -m32 -o c_bin/tmp5468d698 c_obj/tmp5468d698.o runtime.c   
-* ./c_bin/tmp5468d698 42 > c_bin/tmp5468d698.out 2>&1
+*  c_obj/tmp54697232.s
+*  c_obj/tmp54697232.o
+*  c_bin/tmp546971b6
+* gcc -mstackrealign -c -m32 -o c_obj/tmp54697232.o c_obj/tmp54697232.s
+* gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b6 c_obj/tmp54697232.o runtime.c   
 compiling:
 int ARRAY_SIZE = 7;
 int x = 0;
@@ -1138,9 +1106,11 @@ x = x + 1;) {
 }
 return correct;
 * TMP FILES:
-*  c_obj/tmp5468d699.s
-*  c_obj/tmp5468d699.o
-*  c_bin/tmp5468d699
+*  c_obj/tmp54697233.s
+*  c_obj/tmp54697233.o
+*  c_bin/tmp546971b6
+* gcc -mstackrealign -c -m32 -o c_obj/tmp54697233.o c_obj/tmp54697233.s
+* gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b6 c_obj/tmp54697233.o runtime.c   
 compiling:
 int ARRAY_SIZE = 7;
 int arr = 0;
@@ -1228,12 +1198,11 @@ x = x + 1;) {
 }
 return correct;
 * TMP FILES:
-*  c_obj/tmp5468d699.s
-*  c_obj/tmp5468d699.o
-*  c_bin/tmp5468d699
-* gcc -mstackrealign -c -m32 -o c_obj/tmp5468d699.o c_obj/tmp5468d699.s
-* gcc -mstackrealign -m32 -o c_bin/tmp5468d699 c_obj/tmp5468d699.o runtime.c   
-* ./c_bin/tmp5468d699 42 > c_bin/tmp5468d699.out 2>&1
+*  c_obj/tmp54697234.s
+*  c_obj/tmp54697234.o
+*  c_bin/tmp546971b6
+* gcc -mstackrealign -c -m32 -o c_obj/tmp54697234.o c_obj/tmp54697234.s
+* gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b6 c_obj/tmp54697234.o runtime.c   
 compiling:
 int arr = 0;
 int ARRAY_SIZE = 7;
@@ -1338,9 +1307,11 @@ x = x + 1;) {
 }
 return correct;
 * TMP FILES:
-*  c_obj/tmp5468d69a.s
-*  c_obj/tmp5468d69a.o
-*  c_bin/tmp5468d69a
+*  c_obj/tmp54697235.s
+*  c_obj/tmp54697235.o
+*  c_bin/tmp546971b6
+* gcc -mstackrealign -c -m32 -o c_obj/tmp54697235.o c_obj/tmp54697235.s
+* gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b6 c_obj/tmp54697235.o runtime.c   
 
 Easy Parse Tests (20/20 points):
   OK
@@ -1350,87 +1321,201 @@ Parse Error Tests (10/10 points):
   OK
 Scope tests (5/5 points):
   OK
-Easy tests (9/15 points)
-  test1: passed
-  test2: passed
-  test3: passed
-  test4: failed - Program output 4 expected 3
-  test5: passed
-  test6: failed - Program output 4 expected 3
-  test7: failed - test threw an unknown exception: Platform.AsmLinkError("llc -march x86 -O0 - -o -", "Stopped with 1.")
-  test8: failed - test threw an unknown exception: Platform.AsmLinkError("llc -march x86 -O0 - -o -", "Stopped with 1.")
-  test9: passed
-  test10: failed - Program output 1 expected 0
-  test12: passed
-  easy_um1: passed
-  easy_uu1: passed
-  easy_uu2: failed - Program output 1 expected 0
-  easy_uu3: failed - Program output 1 expected 0
-  easy_mu1: passed
-  easy_mu2: passed
-  easy_mu3: failed - Program output 1 expected 0
-  easy_mm1: passed
-  easy_mm2: passed
-  easy_mm3: passed
-  easy_mm4: passed
-  easy_ub1: passed
-  easy_ub2: failed - test threw an unknown exception: Platform.AsmLinkError("llc -march x86 -O0 - -o -", "Stopped with 1.")
-  easy_mb1: passed
-  easy_mb2: failed - test threw an unknown exception: Platform.AsmLinkError("llc -march x86 -O0 - -o -", "Stopped with 1.")
-  easy_mb3: passed
-  easy_mb4: failed - test threw an unknown exception: Platform.AsmLinkError("llc -march x86 -O0 - -o -", "Stopped with 1.")
-Medium tests (7/10 points)
-  test11: passed
-  medium_mw1: passed
-  medium_mw3: failed - Program output 0 expected -1
-  medium_mw4: passed
-  medium_mw5: passed
-  medium_mf1: passed
-  medium_mf2: failed - test threw an unknown exception: Platform.AsmLinkError("llc -march x86 -O0 - -o -", "Stopped with 1.")
-  medium_mf3: failed - Program output 1000 expected 100
-  medium_mf4: passed
-  medium_uw1: passed
-  medium_uf1: failed - Program output 0 expected 41
-  medium_uf2: passed
-  medium_uimw1: passed
-  medium_uimw2: passed
-  medium_uimf1: failed - Program output 100 expected -100
-  medium_uimf2: passed
-  medium_uwmw1: passed
-  medium_ufmf1: passed
-  medium_mwmw1: passed
-  medium_mwmw2: passed
-  medium_mfmf1: passed
-  medium_mfmf2: passed
-  medium_seq1: failed - Program output 2 expected 1
-  medium_seq2: passed
-  medium_seq3: passed
-  medium_seq4: passed
-  medium_seq5: passed
-  medium_seq6: passed
-  medium_seq7: passed
-  medium_seq8: failed - test threw an unknown exception: Platform.AsmLinkError("llc -march x86 -O0 - -o -", "Stopped with 1.")
-  medium_seq9: failed - test threw an unknown exception: Platform.AsmLinkError("llc -march x86 -O0 - -o -", "Stopped with 1.")
-  medium_ctx1: failed - test threw an unknown exception: Platform.AsmLinkError("llc -march x86 -O0 - -o -", "Stopped with 1.")
-  medium_ctx2: failed - test threw an unknown exception: Platform.AsmLinkError("llc -march x86 -O0 - -o -", "Stopped with 1.")
-  medium_ctx3: failed - test threw an unknown exception: Platform.AsmLinkError("llc -march x86 -O0 - -o -", "Stopped with 1.")
-  medium_ctx4: passed
-  medium_ctx5: failed - test threw an unknown exception: Platform.AsmLinkError("llc -march x86 -O0 - -o -", "Stopped with 1.")
-  medium_nest1: passed
-  medium_nest2: passed
-  medium_nest3: passed
-  medium_nest4: passed
+Easy tests (0/15 points)
+  test1: failed - gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971af c_obj/tmp546971ef.o runtime.c   
+Stopped with 1.
+  test2: failed - gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971af c_obj/tmp546971f0.o runtime.c   
+Stopped with 1.
+  test3: failed - gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971af c_obj/tmp546971f1.o runtime.c   
+Stopped with 1.
+  test4: failed - gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971af c_obj/tmp546971f2.o runtime.c   
+Stopped with 1.
+  test5: failed - gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971af c_obj/tmp546971f3.o runtime.c   
+Stopped with 1.
+  test6: failed - gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971af c_obj/tmp546971f4.o runtime.c   
+Stopped with 1.
+  test7: failed - gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b0 c_obj/tmp546971f5.o runtime.c   
+Stopped with 1.
+  test8: failed - gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b0 c_obj/tmp546971f6.o runtime.c   
+Stopped with 1.
+  test9: failed - gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b0 c_obj/tmp546971f7.o runtime.c   
+Stopped with 1.
+  test10: failed - gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b0 c_obj/tmp546971f8.o runtime.c   
+Stopped with 1.
+  test12: failed - gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b0 c_obj/tmp546971f9.o runtime.c   
+Stopped with 1.
+  easy_um1: failed - gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b0 c_obj/tmp546971fa.o runtime.c   
+Stopped with 1.
+  easy_uu1: failed - gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b0 c_obj/tmp546971fb.o runtime.c   
+Stopped with 1.
+  easy_uu2: failed - gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b0 c_obj/tmp546971fc.o runtime.c   
+Stopped with 1.
+  easy_uu3: failed - gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b0 c_obj/tmp546971fd.o runtime.c   
+Stopped with 1.
+  easy_mu1: failed - gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b0 c_obj/tmp546971fe.o runtime.c   
+Stopped with 1.
+  easy_mu2: failed - gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b1 c_obj/tmp546971ff.o runtime.c   
+Stopped with 1.
+  easy_mu3: failed - gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b1 c_obj/tmp54697200.o runtime.c   
+Stopped with 1.
+  easy_mm1: failed - gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b1 c_obj/tmp54697201.o runtime.c   
+Stopped with 1.
+  easy_mm2: failed - gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b1 c_obj/tmp54697202.o runtime.c   
+Stopped with 1.
+  easy_mm3: failed - gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b1 c_obj/tmp54697203.o runtime.c   
+Stopped with 1.
+  easy_mm4: failed - gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b1 c_obj/tmp54697204.o runtime.c   
+Stopped with 1.
+  easy_ub1: failed - gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b1 c_obj/tmp54697205.o runtime.c   
+Stopped with 1.
+  easy_ub2: failed - gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b1 c_obj/tmp54697206.o runtime.c   
+Stopped with 1.
+  easy_mb1: failed - gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b1 c_obj/tmp54697207.o runtime.c   
+Stopped with 1.
+  easy_mb2: failed - gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b1 c_obj/tmp54697208.o runtime.c   
+Stopped with 1.
+  easy_mb3: failed - gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b2 c_obj/tmp54697209.o runtime.c   
+Stopped with 1.
+  easy_mb4: failed - gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b2 c_obj/tmp5469720a.o runtime.c   
+Stopped with 1.
+Medium tests (0/10 points)
+  test11: failed - gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b2 c_obj/tmp5469720b.o runtime.c   
+Stopped with 1.
+  medium_mw1: failed - gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b2 c_obj/tmp5469720c.o runtime.c   
+Stopped with 1.
+  medium_mw3: failed - gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b2 c_obj/tmp5469720d.o runtime.c   
+Stopped with 1.
+  medium_mw4: failed - gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b2 c_obj/tmp5469720e.o runtime.c   
+Stopped with 1.
+  medium_mw5: failed - gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b2 c_obj/tmp5469720f.o runtime.c   
+Stopped with 1.
+  medium_mf1: failed - gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b2 c_obj/tmp54697210.o runtime.c   
+Stopped with 1.
+  medium_mf2: failed - gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b2 c_obj/tmp54697211.o runtime.c   
+Stopped with 1.
+  medium_mf3: failed - gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b2 c_obj/tmp54697212.o runtime.c   
+Stopped with 1.
+  medium_mf4: failed - gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b3 c_obj/tmp54697213.o runtime.c   
+Stopped with 1.
+  medium_uw1: failed - gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b3 c_obj/tmp54697214.o runtime.c   
+Stopped with 1.
+  medium_uf1: failed - gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b3 c_obj/tmp54697215.o runtime.c   
+Stopped with 1.
+  medium_uf2: failed - gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b3 c_obj/tmp54697216.o runtime.c   
+Stopped with 1.
+  medium_uimw1: failed - gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b3 c_obj/tmp54697217.o runtime.c   
+Stopped with 1.
+  medium_uimw2: failed - gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b3 c_obj/tmp54697218.o runtime.c   
+Stopped with 1.
+  medium_uimf1: failed - gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b3 c_obj/tmp54697219.o runtime.c   
+Stopped with 1.
+  medium_uimf2: failed - gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b3 c_obj/tmp5469721a.o runtime.c   
+Stopped with 1.
+  medium_uwmw1: failed - gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b3 c_obj/tmp5469721b.o runtime.c   
+Stopped with 1.
+  medium_ufmf1: failed - gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b4 c_obj/tmp5469721c.o runtime.c   
+Stopped with 1.
+  medium_mwmw1: failed - gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b4 c_obj/tmp5469721d.o runtime.c   
+Stopped with 1.
+  medium_mwmw2: failed - gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b4 c_obj/tmp5469721e.o runtime.c   
+Stopped with 1.
+  medium_mfmf1: failed - gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b4 c_obj/tmp5469721f.o runtime.c   
+Stopped with 1.
+  medium_mfmf2: failed - gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b4 c_obj/tmp54697220.o runtime.c   
+Stopped with 1.
+  medium_seq1: failed - gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b4 c_obj/tmp54697221.o runtime.c   
+Stopped with 1.
+  medium_seq2: failed - gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b4 c_obj/tmp54697222.o runtime.c   
+Stopped with 1.
+  medium_seq3: failed - gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b4 c_obj/tmp54697223.o runtime.c   
+Stopped with 1.
+  medium_seq4: failed - gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b4 c_obj/tmp54697224.o runtime.c   
+Stopped with 1.
+  medium_seq5: failed - gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b4 c_obj/tmp54697225.o runtime.c   
+Stopped with 1.
+  medium_seq6: failed - gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b5 c_obj/tmp54697226.o runtime.c   
+Stopped with 1.
+  medium_seq7: failed - gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b5 c_obj/tmp54697227.o runtime.c   
+Stopped with 1.
+  medium_seq8: failed - gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b5 c_obj/tmp54697228.o runtime.c   
+Stopped with 1.
+  medium_seq9: failed - gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b5 c_obj/tmp54697229.o runtime.c   
+Stopped with 1.
+  medium_ctx1: failed - gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b5 c_obj/tmp5469722a.o runtime.c   
+Stopped with 1.
+  medium_ctx2: failed - gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b5 c_obj/tmp5469722b.o runtime.c   
+Stopped with 1.
+  medium_ctx3: failed - gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b5 c_obj/tmp5469722c.o runtime.c   
+Stopped with 1.
+  medium_ctx4: failed - gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b5 c_obj/tmp5469722d.o runtime.c   
+Stopped with 1.
+  medium_ctx5: failed - gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b5 c_obj/tmp5469722e.o runtime.c   
+Stopped with 1.
+  medium_nest1: failed - gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b5 c_obj/tmp5469722f.o runtime.c   
+Stopped with 1.
+  medium_nest2: failed - gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b6 c_obj/tmp54697230.o runtime.c   
+Stopped with 1.
+  medium_nest3: failed - gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b6 c_obj/tmp54697231.o runtime.c   
+Stopped with 1.
+  medium_nest4: failed - gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b6 c_obj/tmp54697232.o runtime.c   
+Stopped with 1.
 Hard tests (0/10 points)
-  bsort: failed - test threw an unknown exception: Platform.AsmLinkError("llc -march x86 -O0 - -o -", "Stopped with 1.")
-  msort: failed - Program output 0 expected 1
-  hsort: failed - test threw an unknown exception: Platform.AsmLinkError("llc -march x86 -O0 - -o -", "Stopped with 1.")
+  bsort: failed - gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b6 c_obj/tmp54697233.o runtime.c   
+Stopped with 1.
+  msort: failed - gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b6 c_obj/tmp54697234.o runtime.c   
+Stopped with 1.
+  hsort: failed - gcc -Wl,-no_pie -mstackrealign -m32 -o c_bin/tmp546971b6 c_obj/tmp54697235.o runtime.c   
+Stopped with 1.
 Stress tests (hidden) (??/10 points):
   Hidden
 StyleManual (??/10 points):
   Hidden
 ---------------------------------------------------
-Passed: 98/124
-Failed: 26/124
-Score: 61/80 (given)
+Passed: 53/124
+Failed: 71/124
+Score: 45/80 (given)
        ??/20 (hidden)
 
+Configuring platform...
+[Linux]
+compiling:
+
+return 4;
+* TMP FILES:
+*  c_obj/tmp54697236.s
+*  c_obj/tmp54697236.o
+*  c_bin/tmp546971bc
+* gcc -mstackrealign -c -m32 -o c_obj/tmp54697236.o c_obj/tmp54697236.s
+* gcc -mstackrealign -m32 -o c_bin/tmp546971bc c_obj/tmp54697236.o runtime.c   
+* ./c_bin/tmp546971bc 42 > c_bin/tmp546971bc.out 2>&1
+compiling:
+int x = 3;
+return x;
+* TMP FILES:
+*  c_obj/tmp54697237.s
+*  c_obj/tmp54697237.o
+*  c_bin/tmp546971bd
+* gcc -mstackrealign -c -m32 -o c_obj/tmp54697237.o c_obj/tmp54697237.s
+* gcc -mstackrealign -m32 -o c_bin/tmp546971bd c_obj/tmp54697237.o runtime.c   
+* ./c_bin/tmp546971bd 42 > c_bin/tmp546971bd.out 2>&1
+compiling:
+int x = 3;
+int y = 4;
+return x + y;
+* TMP FILES:
+*  c_obj/tmp54697238.s
+*  c_obj/tmp54697238.o
+*  c_bin/tmp546971be
+* gcc -mstackrealign -c -m32 -o c_obj/tmp54697238.o c_obj/tmp54697238.s
+* gcc -mstackrealign -m32 -o c_bin/tmp546971be c_obj/tmp54697238.o runtime.c   
+* ./c_bin/tmp546971be 42 > c_bin/tmp546971be.out 2>&1
+compiling:
+int x = 3;
+if (x == 0) x = x + 1;
+return x;
+* TMP FILES:
+*  c_obj/tmp54697239.s
+*  c_obj/tmp54697239.o
+*  c_bin/tmp546971bf
+* gcc -mstackrealign -c -m32 -o c_obj/tmp54697239.o c_obj/tmp54697239.s
+* gcc -mstackrealign -m32 -o c_bin/tmp546971bf c_obj/tmp54697239.o runtime.c   
