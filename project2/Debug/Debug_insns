@@ -1,0 +1,57 @@
+I use the toplevel like this:
+
+> ocaml -I _build
+
+(this tells ocaml where to find the *.cmo files. It is populated by ocamlbuild)
+
+#load "x86simplified.cmo"
+
+(this binds the module X86simplified to a specific implementation)
+
+
+#use "x86interpreter.ml"
+
+run [(mk_block "main" [
+        Mov (Imm 0x80000000l, eax);
+        Sub (Imm 0x80000000l, eax);
+	Ret;
+      ])] 
+      
+      
+      
+run [
+    mk_insn_block (mk_lbl_named "sum") [
+      Push ebp;
+      Mov (esp, ebp);
+      Push ebx;
+      Mov (base_offset 8l, ebx);
+      Mov (base_offset 12l, edx);
+      Mov (Imm 0l, eax);
+      Mov (Imm 0l, ecx);
+      Jmp (Lbl (mk_lbl_named "loop"))
+    ];
+    mk_insn_block (mk_lbl_named "loop") [
+      Cmp (edx, ecx);
+      J (Sge, mk_lbl_named "done");
+      Add (Ind{i_base = Some Ebx; i_iscl = Some (Ecx, 4l); i_disp = None}, eax);
+      Add (Imm 1l, ecx);
+      Jmp (Lbl (mk_lbl_named "loop"))
+    ];
+    mk_insn_block (mk_lbl_named "done") [
+      Pop ebx;
+      Pop ebp;
+      Ret;
+    ];
+    mk_insn_block (mk_lbl_named "main") [
+      Mov (Imm (-4096l), ebx);
+      Mov (Imm 1l, Ind{i_base = Some Ebx; i_iscl = None; i_disp = None});
+      Mov (Imm 2l, Ind{i_base = Some Ebx; i_iscl = None; i_disp = Some (DImm 4l)});
+      Mov (Imm 3l, Ind{i_base = Some Ebx; i_iscl = None; i_disp = Some (DImm 8l)});
+      Mov (Imm 4l, Ind{i_base = Some Ebx; i_iscl = None; i_disp = Some (DImm 12l)});
+      Push (Imm 4l);
+      Push ebx;
+      Call (Lbl (mk_lbl_named "sum"));
+      Add (Imm 8l, esp);
+      Ret;
+    ];
+  ];;

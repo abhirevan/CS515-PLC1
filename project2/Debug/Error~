@@ -1,0 +1,7 @@
+cc_sub_3 -> 
+
+  ("*cc_sub_3", cs_test [(mk_block "main" [
+        Mov (Imm 0x80000000l, eax);
+        Sub (Imm 0x80000000l, eax);
+	Ret;
+      ])] (false, false, true));

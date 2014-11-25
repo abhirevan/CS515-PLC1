@@ -26,13 +26,13 @@
 # Target: assert.cmx, tags: { compile, extension:cmx, extension:ml, file:assert.cmx, file:assert.ml, implem, native, ocaml, quiet }
 /usr/bin/ocamlopt -c -o assert.cmx assert.ml # cached
 # Target: x86interpreter.ml.depends, tags: { extension:ml, file:x86interpreter.ml, ocaml, ocamldep, quiet }
-/usr/bin/ocamldep -modules x86interpreter.ml > x86interpreter.ml.depends
+/usr/bin/ocamldep -modules x86interpreter.ml > x86interpreter.ml.depends # cached
 # Target: x86simplified.ml.depends, tags: { extension:ml, file:x86simplified.ml, ocaml, ocamldep, quiet }
 /usr/bin/ocamldep -modules x86simplified.ml > x86simplified.ml.depends # cached
 # Target: x86simplified.cmx, tags: { compile, extension:cmx, extension:ml, file:x86simplified.cmx, file:x86simplified.ml, implem, native, ocaml, quiet }
 /usr/bin/ocamlopt -c -o x86simplified.cmx x86simplified.ml # cached
 # Target: x86interpreter.cmx, tags: { compile, extension:cmx, extension:ml, file:x86interpreter.cmx, file:x86interpreter.ml, implem, native, ocaml, quiet }
-/usr/bin/ocamlopt -c -o x86interpreter.cmx x86interpreter.ml
+/usr/bin/ocamlopt -c -o x86interpreter.cmx x86interpreter.ml # cached
 # Target: gradedtests.cmx, tags: { compile, extension:cmx, extension:ml, file:gradedtests.cmx, file:gradedtests.ml, implem, native, ocaml, quiet }
 /usr/bin/ocamlopt -c -o gradedtests.cmx gradedtests.ml # cached
 # Target: providedtests.cmx, tags: { compile, extension:cmx, extension:ml, file:providedtests.cmx, file:providedtests.ml, implem, native, ocaml, quiet }

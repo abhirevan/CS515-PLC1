@@ -1,0 +1,18 @@
+I use the toplevel like this:
+
+> ocaml -I _build
+
+(this tells ocaml where to find the *.cmo files. It is populated by ocamlbuild)
+
+#load "x86simplified.cmo"
+
+(this binds the module X86simplified to a specific implementation)
+
+
+#use "x86interpreter.ml"
+
+run [(mk_block "main" [
+        Mov (Imm 0x80000000l, eax);
+        Sub (Imm 0x80000000l, eax);
+	Ret;
+      ])] 
